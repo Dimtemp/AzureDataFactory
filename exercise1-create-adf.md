@@ -1,11 +1,6 @@
 # Lab - Orchestrating Data Movement with Azure Data Factory
 
-**Estimated Time**: 70 minutes
-
 **Pre-requisites**: It is assumed that the case study for this lab has already been read. It is assumed that the content and lab for module 1: Azure for the Data Engineer has also been completed
-
-* **Azure subscription**: If you don't have an Azure subscription, create
-    a [free account](https://azure.microsoft.com/free/) before you begin.
 
 * **Azure Data Lake Storage Gen2 storage account**: If you don't have an ADLS
     Gen2 storage account, see the instructions in [Create an ADLS Gen2 storage

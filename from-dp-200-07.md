@@ -1,5 +1,4 @@
 ﻿# DP 200 Lab 7 - Orchestrating Data Movement with Azure Data Factory
-test
 
 **Estimated Time**: 30 minutes
 
