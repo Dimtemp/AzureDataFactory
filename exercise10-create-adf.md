@@ -49,5 +49,7 @@ Create your data factory: Use the [Azure Portal](https://portal.azure.com) to cr
 
 > **Note**: The creation of the Data Factory takes approximately 1 minute.
 
+1. On the deployment successful message, click on the button **Go to resource**.
+
 > **Result**: After you completed this exercise, you have created an instance of Azure Data Factory
 

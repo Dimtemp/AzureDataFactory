@@ -1,22 +1,6 @@
-## Exercise 4: Azure Data Factory and Databricks
-  
-Estimated Time: 15 minutes
+# Lab: Azure Data Factory and Databricks
 
-Individual exercise
-  
-The main tasks for this exercise are as follows:
-
-1. Generate a Databricks Access Token.
-
-2. Generate a Databricks Notebook
-
-3. Create Linked Services
-
-4. Create a Pipeline that uses Databricks Notebook Activity.
-
-5. Trigger a Pipeline Run.
-
-### Task 1: Generate a Databricks Access Token.
+## Exercise 1: Generate a Databricks Access Token.
 
 1. In the Azure portal, click on **Resource groups** and then click on **awrgstudxx**, and then click on **awdbwsstudxx** where xx are the initials of your name.
 
@@ -32,7 +16,7 @@ The main tasks for this exercise are as follows:
 
 7. Copy the generated token and store in Notepad, and then click on **Done**.
 
-### Task 2: Generate a Databricks Notebook
+## Exercise 2: Generate a Databricks Notebook
 
 1. On the left of the screen, click on the **Workspace** icon, then click on the arrow next to the word Workspace, and click on **Create** and then click on **Folder**. Name the folder **adftutorial**, and click on **Create Folder**. The adftutorial folder appears in the Workspace.
 
@@ -54,7 +38,7 @@ The main tasks for this exercise are as follows:
 
     > **Note** that the notebook path is **/adftutorial/mynotebook**
 
-### Task 3: Create Linked Services
+## Exercise 3: Create Linked Services
 
 1.  In the Azure portal, return to Azure Data Factory and click **author and monitor** to open Azure Data Factory in the browser.
 
@@ -80,7 +64,7 @@ The main tasks for this exercise are as follows:
 
     > **Note**: When you click on create, you are returned to the **Linked services** screen where the xx_dbls has been created, with the other linked services created in the previous exercise.
 
-### Task 5: Create a pipeline that uses Databricks Notebook Activity.
+## Exercise 5: Create a pipeline that uses Databricks Notebook Activity.
 
 1. On the left hand side of the screen, select the **Author** item to create a pipeline. Under Factory Resources, click on the **+** icon, and then click on **Pipeline**. This opens up a tab with a Pipeline designer.
 
@@ -107,20 +91,20 @@ No errors were found." Click on the >> to close the window.
 
     > **Note**: A message will appear to state that the publishing was completed and successful.
 
-### Task 6: Trigger a Pipeline Run
+## Exercise 6: Trigger a Pipeline Run
 
 1. In the **Notebook1**, click on **Add trigger**, and click on **Trigger Now** next to the Debug  button.
 
 2. The **Pipeline Run** dialog box asks for the name parameter. Use **/path/filename** as the parameter here. Click Finish. A red circle appear above the Notebook1 activity in the canvas.
 
-### Task 7: Monitor the Pipeline
+## Exercise 7: Monitor the Pipeline
 
 1. On the left of the screen, click on the **Monitor** tab. Confirm that you see a pipeline run. It takes approximately 5-8 minutes to create a Databricks job cluster, where the notebook is executed.
 
 2. Select **Refresh** periodically to check the status of the pipeline run.
 
 
-### Task 8: Verify the output
+## Exercise 8: Verify the output
 
 1. In Microsoft Edge, click on the tab **mynotebook - Databricks** 
 

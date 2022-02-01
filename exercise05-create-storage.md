@@ -1,28 +1,9 @@
-# DP 200 Lab 2 - Working with Data Storage
+# Lab Working with Data Storage
 
 ## Lab overview
 
-In this lab, the students will be able to determine the appropriate storage type to implement against a given set of business and technical requirements. They will be able to create Azure storage accounts and Data Lake Storage accounts and explain the difference between Data Lake Storage version 1 and version 2. They will also be able to demonstrate how to perform data loads into the data storage of choice.
+Students will be able to create Azure storage accounts and Data Lake Storage accounts and explain the difference between Data Lake Storage version 1 and version 2. They will also be able to demonstrate how to perform data loads into the data storage of choice.
 
-
-## Scenario
-  
-You have been hired as a Senior Data Engineer to implement a technology solution that is part of a digital transformation project. The organization is migrating an Internet Information Services (IIS) that hosts the company website to Azure. The developers are in the process of transferring the web application and its logic to Azure Web Apps and they have asked you to prepare a data store for them that can be used to host the static images that are used on the website.
-
-In addition, the information services department have informed you that their team is expanding and that they will soon be joined by data scientists that will start the process of building a predictive analytics solution. You have been asked to set up a solution that will be used to host the production environment of their work. In the first instance, you will assess what is the appropriate storage tier to create for the solution.
-
-
-
-## Exercise 1: Choose a data storage approach in Azure
-
-A storage account is an Azure Resource Manager resource. Resource Manager is the deployment and management service for Azure.
-
-Every Resource Manager resource, including an Azure storage account, must belong to an Azure resource group. A resource group is a logical container for grouping your Azure services. When you create a storage account, you have the option to either create a new resource group, or use an existing resource group. 
-
-
-1. From the case study, identify the data storage requirements for the static images for the website, and for the predictive analytics solution.
-
-2. The instructor will discuss the findings with the group.
 
 
 ## Exercise 2: Create an Azure Storage Account  
@@ -200,15 +181,6 @@ The main tasks for this exercise are as follows:
 
 ## Exercise 4: Upload data into Azure Data Lake.
   
-Estimated Time: 10 minutes
-
-Individual exercise
-  
-The main tasks for this exercise are as follows:
-
-1. Install and start Microsoft Azure Storage Explorer
-
-2. Upload some data files to the containers of the Data Lake Gen II Storage Account.
 
 ### Task 1: Install Storage Explorer.
 

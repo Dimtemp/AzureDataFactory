@@ -1,23 +1,9 @@
 
 ## Exercise 3: Transforming Data with Mapping Data Flow
   
-Estimated Time: 30 minutes
-
-Individual exercise
 
 Now that you have moved the data into Azure Data Lake Store Gen2, you are ready to build a Mapping Data Flow which will transform your data at scale via a spark cluster and then load it into a Data Warehouse. 
-  
-The main tasks for this exercise are as follows:
 
-1. Preparing the environment
-
-2. Adding a Data Source
-
-3. Using Mapping Data Flow transformation
-
-4. Writing to a Data Sink
-
-5. Running the Pipeline
 
 ### Task 1: Preparing the environment
 
