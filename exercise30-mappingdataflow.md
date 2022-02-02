@@ -117,6 +117,14 @@ Now that you have moved the data into Azure Data Lake Store Gen2, you are ready 
 1. **Write to a Azure Synapse Analytics Sink**: Now that you have finished all your transformation logic, you are ready to write to a Sink.
     1. Add a **Sink** by clicking on the **+ icon** next to your Alter row transformation and clicking **Sink** under Destination.
 
+    2. 
+
+
+
+
+
+===== Synapse: knip
+
     2. In the Sink tab, create a new data warehouse dataset via the **+ New button** next to **Dataset**.
 
     3. Select **Azure Synapse Analytics** from the tile list and click **Continue**
@@ -136,7 +144,6 @@ Now that you have moved the data into Azure Data Lake Store Gen2, you are ready 
     10. For **username** use your server admin username, for **Password** use the corresponding password you provided, when setting up the service.
 
     11. Click **Create** when finished.
-    ![Creating an Azure Synapse Analytics connection in Azure Data Factory](Linked_Image_Files/M07-E03-T04-img01.png)
 
     12. In the **Set properties** page, select **Create new table** and enter in the schema of **dbo** and the  table name of **Ratings**. Click **OK** once completed.
     ![Creating an Azure Synapse Analytics table in Azure Data Factory](Linked_Image_Files/M07-E03-T04-img02.png)
