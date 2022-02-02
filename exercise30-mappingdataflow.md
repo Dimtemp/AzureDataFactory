@@ -16,11 +16,11 @@ Now that you have moved the data into Azure Data Lake Store Gen2, you are ready 
     > NOTE: Data Flow clusters take 5-7 minutes to warm up.
 
 
-3. Select the data flow activity in the pipeline workspace. In the lower pane, select the settings tab, click **+ New** for the variable **Dataflow**
-
 ### Task 2: Adding a Data Source
 
-1. **Add an ADLS source**: Click on the Mapping Data Flow object in the canvas. Go to the source settings tab. In the **Dataset** dropdown, select your **ADLSG2** dataset used in your Copy activity
+1. Select the data flow activity in the pipeline workspace. In the lower pane, select the settings tab, click **+ New** for the variable **Dataflow**
+
+1. **Add an ADLS source**: Click on the Mapping Data Flow object in the canvas. Go to the source settings tab. In the **Dataset** dropdown, select your **ADLS** dataset used in your Copy activity
 
     ![Adding a Source to a Mapping Data Flow in Azure Data Factory](Linked_Image_Files/M07-E03-T02-img01.png)
 
@@ -62,7 +62,6 @@ Now that you have moved the data into Azure Data Lake Store Gen2, you are ready 
 
 
 
-   
 4. **Rank movies via a Window Transformation** Say you are interested in how a movie ranks within its year for its specific genre. You can add a [Window transformation](https://docs.microsoft.com/azure/data-factory/data-flow-window) to define window-based aggregations by clicking on the **+ icon** next to your Derived Column transformation and clicking **Window** under Schema modifier. To accomplish this, specify what you are windowing over, what you are sorting by, what the range is, and how to calculate your new window columns. In this example, we will window over PrimaryGenre and year with an unbounded range, sort by Rotten Tomato descending, a calculate a new column called RatingsRank which is equal to the rank each movie has within its specific genre-year.
 
 

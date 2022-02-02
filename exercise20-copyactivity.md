@@ -44,7 +44,7 @@ The main tasks for this exercise are as follows:
 
 5. In the **New Linked Service (HTTP)** screen, copy the URL of the moviesDB csv file below in the **Base URL** textbox.  You can access the data with no authentication required using the following endpoint:
 
-    https://raw.githubusercontent.com/djpmsft/adf-ready-demo/master/moviesDB.csv
+    https://raw.githubusercontent.com/Dimtemp/AzureDataFactory/master/labfiles/moviesDB.csv
 
 6. In the **Authentication type** drop down, select **Anonymous**. and click on **Create**.
 
@@ -76,13 +76,13 @@ The main tasks for this exercise are as follows:
 
 7. Once you have configured your linked service, you enter the set properties blade. As you are writing to this dataset, you want to point the folder where you want moviesDB.csv copied to. In the example below, I am writing to folder **output** in the file system **data**. While the folder can be dynamically created, the file system must exist prior to writing to it.
 
-8. Set **First row as header** to be true. Select Import Schema: From connection/store. 
+8. Set **First row as header** to be true. Select Import Schema: From file
 
-# of liever from file????
+9. Browse to the AzureDataFactory\Labfiles\moviesDB.csv file.
 
    ![Setting properties of a Sink in Azure Data Factory in the Azure Portal](Linked_Image_Files/M07-E02-T03-img02.png)
 
-8. Click **OK** once completed.
+10. Click **OK** once completed.
 
 ### Task 4: Test the Copy Activity
 
