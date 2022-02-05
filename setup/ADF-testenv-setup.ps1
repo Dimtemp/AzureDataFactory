@@ -169,10 +169,10 @@ To do: download and install SQL Database, like AdventureWorks
 
 
 $pw = ConvertTo-SecureString -String 'Pa55w.rd' -AsPlainText -Force
-#New-AzDataFactoryDemoEnvironment -Password $pw -Verbose #-CleanUpADFResourceGroup
+New-AzDataFactoryDemoEnvironment -Password $pw -Verbose #-CleanUpADFResourceGroup
 
 $pw = ConvertTo-SecureString -String 'Pa55w.rd1234' -AsPlainText -Force
-New-AzDataFactoryVM -ResourceGroupName 'ADF-VM4' -Password $pw -Verbose
+#New-AzDataFactoryVM -ResourceGroupName 'ADF-VM4' -Password $pw -Verbose
 
 # deze werken uitsluitend met definition files  :(
 #New-AzDataFactoryV2LinkedService
