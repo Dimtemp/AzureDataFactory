@@ -181,26 +181,7 @@ The main tasks for this exercise are as follows:
 
 ## Exercise 4: Upload data into Azure Data Lake.
   
-
-### Task 1: Install Storage Explorer.
-
-1. In the Azure portal, in the **awdlsstudxx** overview page, navigate to **Storage Explorer (preview)** and then navigate to **Containers**
-
-2. Click on the **logs** container and click on **Upload**
-
-3. On the right hand side a popup will appear and click on the **Download Azure Storage Explorer** hyperlink.
-
-4. You are taken to the following web page for [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/) where there is a button that states **Download now**. click on this button.
-
-5. In the Microsoft Edge dialog box click **Save**, when the download is complete, click on **View downloads**, in the download screen in Microsoft Edge, click on **Open folder**. This will open the Downloads folder.
-
-6. Double click the file **StorageExplorer.exe**, in the User Account Control dialog box click on **Yes**.
-
-7. In the License Agreement screen, select the radio button next to **I agree the agreement**, and then click on **Install**.
-
-   > **Note**: The installation of Storage Explorer can take approximately 4 minutes. Azure Storage Explorer allows you to easily manage the contents of your storage account with Azure Storage Explorer. Upload, download, and manage blobs, files, queues, tables, and Cosmos DB entities. It also enables you to gain easy access to manage your virtual machine disks.
-
-8. On completion of the installation, ensure that the checkbox next to **Launch Microsoft Azure Storage Explorer** is selected and then click **Finish**. Microsoft Azure Storage Explorer opens up and lists your subscriptions.
+1. Open Storage Explorer.
 
 9. In Storage Explorer, select **Manage Accounts** to go to the **Account Management Panel**.
 
