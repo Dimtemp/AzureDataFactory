@@ -2,7 +2,7 @@
 
 ## Lab overview
 
-Students will be able to create Azure storage accounts and Data Lake Storage accounts and explain the difference between Data Lake Storage version 1 and version 2. They will also be able to demonstrate how to perform data loads into the data storage of choice.
+Students will be able to create Azure storage accounts and Data Lake Storage accounts and explain the difference between a storage account and and a data lake. They will also be able to demonstrate how to perform data loads into the data storage of choice.
 
 
 
