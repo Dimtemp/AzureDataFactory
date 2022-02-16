@@ -5,8 +5,7 @@
 Students will be able to create Azure storage accounts and Data Lake Storage accounts and explain the difference between a storage account and and a data lake. They will also be able to demonstrate how to perform data loads into the data storage of choice.
 
 
-
-## Exercise 2: Create an Azure Storage Account  
+## Task 1: Create an Azure Storage Account  
 
 1. Browse to the Azure portal at [**http://portal.azure.com**](http://portal.azure.com) and sign in.
 
@@ -34,31 +33,30 @@ Students will be able to create Azure storage accounts and Data Lake Storage acc
 
         - **Performance**: **Standard**. This type of account is recommended by Microsoft for most scenarios. Please keep in mind that Premium performance only allows you to select Locally Redundant Storage.
 
-    1. Select the advanced tab.
-
         - **Redundancy**: **Geo-redundant storage (GRS)**
 
         - Select **Make read access to data available in the event of regional unavailability.**
 
             ![Create storage account settings in the Azure portal](Linked_Image_Files/M02-E02-T02-img01.png)
 
-6. In the **Create storage account** screen, click **Review + create**.
+6. Click **Review + create**.
 
 7. After the validation of the **Create storage account*** screen, click **Create**.
 
-   > **Note**: The creation of the storage account will take approximately 90 seconds while it provisions the disks and the configuration of the disks as per the settings you have defined.
+   > **Note**: The creation of the storage account will take a minute.
 
-### Task 3: Create and configure a container within the storage account.
+
+## Task 2: Create and configure a container within the storage account.
 
 1. In the Azure portal, a message states that _Deployment succeeded_, click on the button **Go to resource**.
 
-2. In the **awsastudxx** screen, where **xx** are your initials, under the **Data storage** click **Containers**.
+2. Under the **Data storage** section, click **Containers**.
 
-3. In the **awsastudxx - Containers** screen, at the top left, click on the  **+ Container** button.
+3. In the containers screen, at the top left, click on the  **+ Container** button.
 
 4. From the **New Container*** screen, create a container with the following settings:
 
-    - Name: **images**.
+    - Name: **containera**.
 
     - Public access level: **Private (no anonymous access)**
 
