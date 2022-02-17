@@ -1,4 +1,4 @@
-# Lab Working with Data Storage
+# Lab: Working with Data Storage
 
 ## Lab overview
 
@@ -27,7 +27,7 @@ Students will be able to create Azure storage accounts and Data Lake Storage acc
 
     - Under the Instance details, specify the following settings:
     
-        - **Storage account name**: Choose a unique name for your storage account. Storage account names must be between 3 and 24 characters in length and may contain numbers and lowercase letters only. Please keep in mind this is (part of) a FQDN. So the name needs to be globally unique.
+        - **Storage account name**: **storxxxxx**, where **xxxxx** is a random number. For example: **stor73542**. Storage account names must be between 3 and 24 characters in length and may contain numbers and lowercase letters only. Please keep in mind this is (part of) a FQDN. So the name needs to be globally unique.
 
         - **Region**: **West Europe**.
 
@@ -56,7 +56,7 @@ Students will be able to create Azure storage accounts and Data Lake Storage acc
 
 4. From the **New Container*** screen, create a container with the following settings:
 
-    - Name: **containera**.
+    - Name: **data**.
 
     - Public access level: **Private (no anonymous access)**
 
@@ -64,58 +64,33 @@ Students will be able to create Azure storage accounts and Data Lake Storage acc
 
 5. In the **New Container** screen, click **Create**.
 
-   > **Note**: The creation of the container is immediate and will appear in the list of the **awrgstudxx - Containers** screen.
+   > **Note**: The creation of the container is immediate and will appear in the list.
 
-6. Repeat steps 4 -5 to create a container named **phonecalls** with the public access level of **Private (no anonymous access)**
 
-7. Repeat steps 4 -5 to create a container named **tweets** with the public access level of **Private (no anonymous access)**. Your screen should look as the graphic below:
+## Task 3: Upload some files to the data container of the storage account.
 
-    ![List of Containers in the Azure portal](images/M02-E02-T03-img02.png)
+1. In the Azure portal, in the **Containers** screen, click on the **data** container in the list.
 
-### Task 4: Upload some graphics to the images container of the storage account.
-
-1. In the Azure portal, in the **awsastudxx - Containers** screen, click on the **images** container in the list.
-
-2. In the **images** screen, click on the **Upload** button.
+2. In the **data** screen, click on the **Upload** button.
 
 3. In the **Upload blob** screen, in the Files text box, click on the **folder** icon to the right of the text box.
 
-4. In the **Open** dialog box, browse to  **Labfiles\Starter\DP-200.2\website graphics** folder. Highlight the following files:
-
-    - one.png
-
-    - two.png
-
-    - three.png
-
-    - No.png
+4. In the **Open** dialog box, browse to  C:\Windows\ folder. Select the following file: win.ini.
 
 5. In the **Open** dialog box, click **Open**. 
 
 6. In the **Upload blob** screen, click on the **Upload** button.
 
-7. Close the **Upload blob** screen, and close the **images** screen.
+7. Close the **Upload blob** screen, and close the **data** screen.
 
-8. Close the **awsastudxx - Containers** screen, and in the Azure portal, navigate to the **Home** screen. 
-
-   > **Note**: The upload of the files will take approximately 5 seconds. Once completed, they will appear in a list in the upload blobs screen.
-
-> **Result**: After you completed this exercise, you have created a Storage account named awsastudxx that has a container named images that contains four graphics files that are ready to be used on the AdventureWorks website.
-
-## Exercise 3: Explain Azure Data Lake Storage
-  
-Estimated Time: 15 minutes
-
-Individual exercise
-  
-The main tasks for this exercise are as follows:
-
-1. Create and configure a storage account named **awdlsstudxx** as a Data Lake Store Gen2 storage type in the region closest to the lab location, within the resource group awrgstudxx, where **xx** are your initials.
-
-2. Create containers named **logs** and **data** within the awdlsstudxx storage account.
+8. Close the **Containers** screen, and in the Azure portal, navigate to the **Home** screen. 
 
 
-### Task 1: Create and configure a storage account as a Data Lake Store Gen II store.
+> **Result**: After you completed this exercise, you have created a Storage account that has a container named data that contains the win.ini file.
+
+
+
+## Task 4: Create and configure a storage account as a Data Lake Store Gen II store.
 
 1. In the Azure portal, click on **+ Create a resource** icon.
 
@@ -129,11 +104,11 @@ The main tasks for this exercise are as follows:
 
         - **Subscription**: the name of the subscription you are using in this lab
     
-        - **Resource group name**: **awrgstudxx**, where **xx** are your initials.
+        - **Resource group name**: **ADF**.
 
     - Under the instance details, specify the following settings:
 
-        - **Storage account name**: **awdlsstudxx**, where **xx** are your initials.
+        - **Storage account name**: **adlsxxxxx**, where **xxxxx** is a random number. For example: **adls73542**. Storage account names must be between 3 and 24 characters in length and may contain numbers and lowercase letters only. Please keep in mind this is (part of) a FQDN. So the name needs to be globally unique.
 
         - **Region**: the name of the Azure region which is closest to the lab location and where you can provision Azure VMs.
 
@@ -153,55 +128,54 @@ The main tasks for this exercise are as follows:
 
 8. After the validation of the  **Create storage account*** blade, click **Create**.
 
-   > **Note**: The creation of the storage account will take approximately 90 seconds while it provisions the disks and the configuration of the disks as per the settings you have defined.
+   > **Note**: The creation of the storage account might take approximately 1 minute.
 
-### Task 2: Create and configure a Container within the storage account.
+
+## Task 5: Create and configure a Container within the storage account.
 
 1. In the Azure portal, a message states that _Deployment succeeded_, click on the button **Go to resource**.
 
-2. In the **awdlsstudxx** screen, where **xx** are your initials, click **Containers**.
+2. In the **storxxxxx** screen, click **Containers**.
 
-3. In the **awrgstudxx - Containers** screen, at the top left, click on the  **+ Containers** button.
+3. In the **Containers** screen, at the top left, click on the  **+ Containers** button.
 
-4. From the **New** screen, create two containers with the following name:
-
-    - Name: **data** with the public access level of **Private (no anonymous access)**.
+4. From the **New** screen, create a container with the following name:
 
     - Name: **logs** with the public access level of **Private (no anonymous access)**.
 
 5. In the **New Container** screen, click **Create**.
 
-   > **Note**: The creation of the file system is immediate and will appear in the list of the **awdlsstudxx - Containers** screen as follows.
+   > **Note**: The creation of the file system is immediate and will appear in the list of the **Containers** screen.
 
-    ![File Systems listed in the Azure portal](images/M02-E03-T02-img01.png)
+> **Result**: After you completed this exercise, you have created a Data Lake Gen2 Storage account that has a file system named logs.
 
-> **Result**: After you completed this exercise, you have created a Data Lake Gen2 Storage account named awdlsstudxx that has a file system named data and logs.
 
-## Exercise 4: Upload data into Azure Data Lake.
+## Task 6: Connect Storage Explorer to Azure.
   
-1. Open Storage Explorer.
+1. From the Azure VM, Open Storage Explorer (icon is in the taskbar).
 
-9. In Storage Explorer, select **Manage Accounts** to go to the **Account Management Panel**.
+2. In Storage Explorer, select **Manage Accounts** to go to the **Account Management Panel**.
 
-10. The left pane now displays all the Azure accounts you've signed in to. To connect to another account, select **Add an account**
+3. The left pane now displays all the Azure accounts you've signed in to. To connect to another account, select **Add an account**
 
-11. Select **Subscription**
+4. Select **Subscription**
 
-12. Select the Azure environment you will use to sign in
+5. Select the Azure environment you will use to sign in
 
-13. You will be redirect to a login page
+6. You will be redirect to a login page
 
-14. Select your account where the following pop up message should show up **Authenticated. You can return to Storage Explorer. You might need to authenticate again if you close this browser tab**
+7. Select your account where the following pop up message should show up **Authenticated. You can return to Storage Explorer. You might need to authenticate again if you close this browser tab**
 
-15. After you successfully sign in with an Azure account, the account and the Azure subscriptions associated with that account are added to the left pane. Select the Azure subscriptions that you want to work with, and then select **Open explorer**. The left pane displays the storage accounts associated with the selected Azure subscriptions.
+8. After you successfully sign in with an Azure account, the account and the Azure subscriptions associated with that account are added to the left pane. Select the Azure subscriptions that you want to work with, and then select **Open explorer**. The left pane displays the storage accounts associated with the selected Azure subscriptions.
 
     ![Azure Storage Explore](images/M02-E04-T01-img01.png)
 
-### Task 2: Upload data files to the data and logs container of the Data Lake Gen II Storage Account.
+
+## Task 7: Upload data files to the data and logs container of the Data Lake Gen II Storage Account.
 
 1. In Azure Storage Explorer, click on the arrow to expand your subscription.
 
-2. Under **Storage Accounts**, search for the storage account **awdlsstudxx (ADLS Gen2)**, and click on the arrow to expand it.
+2. Under **Storage Accounts**, search for the storage account **adlsxxxxx (ADLS Gen2)**, and click on the arrow to expand it.
 
 3. Under **Blob Containers**, click on the arrow to expand it and show the **logs** file system. Click on the **logs** file system.
 
@@ -209,13 +183,9 @@ The main tasks for this exercise are as follows:
 
 5. In Upload Files dialog box, click on the ellipsis next to the **Selected files** text box.
 
-6. In the **Choose files to upload** dialog box, browse to **Labfiles\Starter\DP-200.2\logs** folder. Highlight the following files:
+6. In the **Choose files to upload** dialog box, browse to the C:\Windows\ folder. Highlight the following file:
 
-    - weblogsQ1.log
-
-    - weblogsQ2.log
-
-    - preferences.json
+    - WindowsUpdate.log
 
 7. In the **Choose files to upload** dialog box, click **Open**.
 
@@ -223,34 +193,5 @@ The main tasks for this exercise are as follows:
 
    ![Uploading files in Azure Storage Explore](images/M02-E04-T02-img01.png)
 
-9. Under **Blob Containers**, click on the arrow to expand it and show the **data** file system. Click on the **data** file system.
 
-10. In Azure Storage Explorer, click on the arrow of the **Upload** icon, and click on the **Upload Files..**.
-
-11. In Upload Files dialog box, click on the ellipsis next to the **Selected files** text box.
-
-12. In the **Choose files to upload** dialog box, browse to **Labfiles\Starter\DP-200.2\Static Files** folder. Highlight the following files:
-
-    - DimDate2.txt
-
-13. In the **Choose files to upload** dialog box, click **Open**.
-
-14. In the **Upload Files** screen, click on the **Upload** button.
-
-15. Repeat the steps to upload the preferences.JSON file from the **Labfiles\Starter\DP-200.2\logs** folder to the **data** file system in the Data Lake Store gen2
-
-   > **Note**: The upload of the files will take approximately 5 seconds. You will see a message in Azure Storage Explorer that states **Your view may be out of data. Do you want to refresh? Click Yes**. Once completed, all two files will appear in a list in the upload blobs screen.
-
-   ![Files uploaded to Containers in Azure Storage Explore](images/M02-E04-T02-img02.png)
-
-16. In Azure Storage Explorer, in the data file system, click on the **+ New Folder** button.
-
-17. In the New Folder screen, in the New folder name text box, type **output** and click on **OK**
-
-18. Close down Azure Storage Explorer.
-
-19. Return to the Azure portal, and navigate to the **Home** blade.
-
-> **Result**: After you completed this exercise, you have created a Data Lake Gen II Storage account named awdlsstudxx that has a file system named data that contains two weblog files that are ready to be used by the Data scientists at AdventureWorks.
-
-
+> **Result**: After you completed this exercise, you have created a Data Lake Gen II Storage account named **adlsxxxxx** that has a file system named **logs** that contains a log file that is ready to be used by the Data scientists at AdventureWorks.

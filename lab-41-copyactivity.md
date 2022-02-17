@@ -7,7 +7,56 @@ At the end of this lad, you will have:
 1. Performed transformations using a compute resource
 
 
-### Task 1: Add the Copy Activity to the designer
+## Task 1: download the CSV file and inspect it's contents.
+
+1. Sign in to the Azure portal.
+
+1. In the left pane, select **Virtual Machines**.
+
+1. Select the **Sql2019** virtual machine.
+
+1. On the Overview page for the virtual machine, select the Connect button and choose RDP. 
+
+	![Picture 21](images/dp-3300-module-11-lab-21.png)
+
+ 
+2. On the RDP tab, select the Download RDP File button. 
+
+	![Picture 22](images/dp-3300-module-11-lab-22.png)
+
+3. Open the RDP file that was just downloaded. When a dialog appears asking if you want to connect, select the Connect button.   
+	![Picture 23](images/dp-3300-module-11-lab-23.png)
+
+ 
+4. In the Windows Security dialog if you receive the PIN dialog, select More choices. Then choose Use a different account. If you don’t receive the PIN dialog, you can proceed to Step 5.
+
+	![Picture 24](images/dp-3300-module-11-lab-24.png)
+
+ 
+5. Enter the username and password selected during the virtual machine provisioning process. Then select the OK button.
+
+	![Picture 25](images/dp-3300-module-11-lab-25.png)
+
+ 
+6. When the Remote Desktop Connection dialog appears asking if you want to connect, select the Yes button. 
+
+	![Picture 26](images/dp-3300-module-11-lab-26.png)
+
+
+7. A Remote Desktop window will open.
+
+8. In the VM, open a web browser and open this URL:
+
+    https://github.com/Dimtemp/AzureDataFactory/tree/main/labfiles
+
+9. Click the moviesDB.csv file and inspect the contents.
+
+10. Click the **Raw** button to show the source CSV file.
+
+11. Right click the browser window and select **Save as...". Save the file on your desktop.
+
+
+## Task 2: Add the Copy Activity to the designer
 
 1. Sign in to the Azure portal.
 
@@ -28,7 +77,7 @@ At the end of this lad, you will have:
     ![Adding the Copy Activity to Azure Data Factory in the Azure Portal](images/M07-E02-T01-img01.png)
 
 
-### Task 2: Create a new HTTP dataset to use as a source
+## Task 2: Create a new HTTP dataset to use as a source
 
 1. In the Source tab of the Copy activity settings, click **+ New**
 
@@ -42,7 +91,9 @@ At the end of this lad, you will have:
 
     https://raw.githubusercontent.com/Dimtemp/AzureDataFactory/master/labfiles/moviesDB.csv
 
-6. In the **Authentication type** drop down, select **Anonymous**. and click on **Create**.
+6. In the **Authentication type** drop down, select **Anonymous**.
+
+7. Click the **Test connection** button in the lower right corner of the screen. If the test is succesfull, click on **Create**.
 
     -  Once you have created and selected the linked service, specify the rest of your dataset settings. These settings specify how and where in your connection we want to pull the data. As the url is pointed at the file already, no relative endpoint is required. As the data has a header in the first row, set **First row as header** to be true and select Import schema from **connection/store** to pull the schema from the file itself. Select **GET** as the request method. You will see the following screen
 
@@ -54,11 +105,12 @@ At the end of this lad, you will have:
    
    ![Previewing in Azure Data Factory in the Azure Portal](images/M07-E02-T02-img02.png)
 
+
 ### Task 3: Create a new ADLS Gen2 dataset sink
 
 1. Click on the **Sink tab**, and the click **+ New**
 
-2. Select the **Azure Data Lake Storage Gen2** tile and click **Continue**. Please make sure you **did not** select Gen1 in this step.
+2. Select the **Azure Data Lake Storage Gen2** tile and click **Continue**. Please make sure you **did not** select **Gen1** in this step.
 
 3. Select the **DelimitedText** format tile and click **Continue**.
 
@@ -68,17 +120,26 @@ At the end of this lad, you will have:
 
    ![Create a Sink in Azure Data Factory in the Azure Portal](images/M07-E02-T03-img01.png)
 
-6. Click on **Create**
+6. Click the **Test connection** button in the lower right corner of the screen. If the test is succesfull, click on **Create**.
 
 7. Once you have configured your linked service, you enter the set properties blade. As you are writing to this dataset, you want to point the folder where you want moviesDB.csv copied to. In the example below, I am writing to folder **output** in the file system **data**. While the folder can be dynamically created, the file system must exist prior to writing to it.
 
-8. Set **First row as header** to be true. Select Import Schema: From file
+8. Set **First row as header** to be true. Select Import Schema: From sample file OF FROM STORE???????????????????????????????????????
+
+
+
+
+
 
 9. Browse to the AzureDataFactory\Labfiles\moviesDB.csv file.
 
    ![Setting properties of a Sink in Azure Data Factory in the Azure Portal](images/M07-E02-T03-img02.png)
 
 10. Click **OK** once completed.
+
+
+
+
 
 ### Task 4: Test the Copy Activity
 
@@ -90,5 +151,13 @@ At this point, you have fully configured your copy activity. To test it out, cli
 
    ![Monitoring a pipeline in Azure Data Factory in the Azure Portal](images/M07-E02-T04-img01.png)
 
-3. To verify the copy worked as expected, open up your ADLS gen2 storage account and check to see your file was written as expected.
+3. Return to the Azure Portal.
+
+4. In the left pane, select Resource Groups.
+
+5. Select the ADF resource group.
+
+6. In the ADF resource group, select your Azure Storage Account to open it.
+
+7. Click containers, click the data container and check to see your file was written as expected.
 

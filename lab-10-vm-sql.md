@@ -1,14 +1,11 @@
-
-# Lab 1 - Using the Azure Portal and SQL Server Management Studio
+# Lab: Using the Azure Portal and SQL Server Management Studio
  
-# Lab Overview 
+## Lab Overview 
 
 Students will explore the Azure Portal and use it to create an Azure VM with SQL Server 2019 installed. Then they will connect to the virtual machine through Remote Desktop Protocol and use the SQL Server Management Studio. 
 
 
-# Exercise 1: Provision a SQL Server on an Azure Virtual Machine 
-
-## Task 1: Explore the Azure Portal
+## Task 1: Provision a SQL Server on an Azure Virtual Machine 
 
 1. From the lab virtual machine, if you are not already in the portal, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). 
 

@@ -1,4 +1,4 @@
-# Lab - Creating an Azure Data Factory
+# Lab: Creating an Azure Data Factory
 
 ## Scenario
   

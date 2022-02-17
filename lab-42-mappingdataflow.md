@@ -1,24 +1,38 @@
+# Lab: Transforming Data with Mapping Data Flow
 
-## Exercise 3: Transforming Data with Mapping Data Flow
-  
-
-Now that you have moved the data into Azure Data Lake Store Gen2, you are ready to build a Mapping Data Flow which will transform your data at scale via a spark cluster and then load it into a Data Warehouse. 
+You are ready to build a Mapping Data Flow which will transform your data at scale via a spark cluster and then load it into a Data Warehouse. 
 
 
-### Task 1: Preparing the environment
+## Task 1: open the Azure Data Factory
 
-1. **Add a Data Flow activity** In the Activities pane, open the **Move and Transform** accordion and drag the **Data Flow** activity onto the pipeline canvas and connect with the **Copy data** activity we created earlier. 
+You might have closed the Azure Data Factory studio. If so, please follow this procedure to open it. If it is alread open, you can skip to task 2.
+
+1. Sign in to the Azure portal.
+
+1. In the left pane, select Resource Groups.
+
+1. Select the ADF resource gorup.
+
+1. In the ADF resource group, select your Azure Data Factory to open it.
+
+1. Select the **Open Azure Data Factory Studio** link.
+
+1. Alternatively, for the previous steps, you can open the Azure Data Factory by visiting the link https://adf.azure.com/ and signing in.
+
+
+## Task 2: add a data flow activity
+
+
+1. In the Activities pane, open the **Move and Transform** accordion and drag the **Data Flow** activity onto the pipeline canvas and connect with the **Copy data** activity we created earlier. 
 
     ![Adding a Mapping Data Flow in Azure Data Factory](images/M07-E03-T01-img01.png)
 
 2. Turn the **Data Flow Debug** slider located at the top of the authoring module on, and click **OK** in the **Turn on data flow debug** screen that appears.  
 
-    > NOTE: Data Flow clusters take 5-7 minutes to warm up.
+    > NOTE: Data Flow clusters might take 5 minutes to warm up.
 
 
-### Task 2: Adding a Data Source
-
-1. Select the data flow activity in the pipeline workspace. In the lower pane, select the settings tab, click **+ New** for the variable **Dataflow**
+3. Select the data flow activity in the pipeline workspace. In the lower pane, select the settings tab, click **+ New** for the variable **Dataflow**
 
 1. **Add an ADLS source**: Click on the Mapping Data Flow object in the canvas. Go to the source settings tab. In the **Dataset** dropdown, select your **ADLS** dataset used in your Copy activity
 
@@ -29,8 +43,9 @@ Now that you have moved the data into Azure Data Lake Store Gen2, you are ready 
     * If you have not imported your schema in your ADLS, but have already ingested your data, go to the dataset's 'Schema' tab and click 'Import schema' so that your data flow knows the schema projection.
 
     Once your debug cluster is warmed up, verify your data is loaded correctly via the **Data preview** tab. Once you click the refresh button, Mapping Data Flow will show calculate a snapshot of what your data looks like when it is at each transformation.
-  
-### Task 3: Using Mapping Data Flow transformation
+
+
+## Task 4: Using Mapping Data Flow transformation
 
 1. **Add a Select transformation to rename and drop a column**: In the preview of the data, you may have noticed that the "Rotton Tomatoes" column is misspelled. To correctly name it and drop the unused Rating column, you can add a [Select transformation](https://docs.microsoft.com/azure/data-factory/data-flow-select) by clicking on the + icon next to your ADLS source node and choosing **Select** under Schema modifier.
     

@@ -7,8 +7,9 @@ function New-AzDataFactoryDemoEnvironment {
         [string]$ResGroupName = 'ADF',
 
         [string]$StorageAccountName  = "stor1$(Get-Random -maximum 100000000)",   # min 3 max 24 chars
-        [string]$StorageAccountName2 = "stor2$(Get-Random -maximum 100000000)",
-        [string]$ContainerNamePrefix = 'container',
+        [string]$StorageAccountName2 = "adls2$(Get-Random -maximum 100000000)",
+        [string]$ContainerName1 = 'data',
+        [string]$ContainerName2 = 'logs',
 
         [string]$KeyVaultName = "vault1$(Get-Random -maximum 100000000)",
 
@@ -73,9 +74,8 @@ function New-AzDataFactoryDemoEnvironment {
 
             # finish without specific parameters
             $PSDefaultParameterValues=@{}
-            New-AzStorageContainer -Name "$($ContainerNamePrefix)a" -Context $s1.context
-            New-AzStorageContainer -Name "$($ContainerNamePrefix)b" -Context $s1.context
-            New-AzStorageContainer -Name "$($ContainerNamePrefix)c" -Context $s2.context
+            New-AzStorageContainer -Name $ContainerName1 -Context $s1.context
+            New-AzStorageContainer -Name $ContainerName2 -Context $s2.context
         } else {
             Write-Error "Storage account name not available: $StorageAccountName"
         }
