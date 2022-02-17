@@ -1,14 +1,4 @@
 ## Exercise 2: Ingest data using the Copy Activity
-  
-The main tasks for this exercise are as follows:
-
-1. Add the Copy Activity to the designer
-
-2. Create a new HTTP dataset to use as a source
-
-3. Create a new ADLS Gen2 sink
-
-4. Test the Copy Activity
 
 
 ### Task 1: Add the Copy Activity to the designer
