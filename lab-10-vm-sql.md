@@ -52,7 +52,7 @@ Students will explore the Azure Portal and use it to create an Azure VM with SQL
 	![Picture 7](images/dp-3300-module-11-lab-07.png)
 
  
-8. Ensure you have selected the appropriate subscription for the lab. Name the resource group DP-300-Lab01. Select the nearest Azure region to your location. Select the Review + Create button. Once the review completes, select the Create button. 
+8. Ensure you have selected the appropriate subscription for the lab. Name the resource group Sql2019. Select the nearest Azure region to your location. Select the Review + Create button. Once the review completes, select the Create button. 
 
 	![Picture 8](images/dp-3300-module-11-lab-08.png)
 
@@ -77,11 +77,11 @@ Students will explore the Azure Portal and use it to create an Azure VM with SQL
 
 	- Subscription: **&lt;Your subscription&gt;**
 
-	- Resource group: **DP-300-Lab01**
+	- Resource group: **Sql2019**
 
-	- Virtual machine name:  **dp300sqlvmlab01**
+	- Virtual machine name:  **Sql2019**
 
-	- Region: **&lt;your local region, same as the selected region for your resource group&gt;**
+	- Region: **West Europe**
 
 	- Availability Options: **No infrastructure redundancy required**
 	
@@ -91,15 +91,13 @@ Students will explore the Azure Portal and use it to create an Azure VM with SQL
 
 	- Size: Standard **D2s_v3** (2 vCPUs, 8 GiB memory; you may need to select the "See all sizes" link to see this option)
 
-	- Administrator account username: **dp300sqlvmlab01admin**
+	- Administrator account username: **your first name**
 
-	- Administrator account password: **pwd!DP300lab01** (or your own password that meets the criteria)
+	- Administrator account password: **Pa55w.rd1234** (or your own password that meets the criteria)
 
 	- Select inbound ports: **RDP (3389)**
 
 	- Would you like to use an existing Windows Server license?: **No**
-
- 
 
 	Make note of the username and password for later use.
 
@@ -120,8 +118,7 @@ Students will explore the Azure Portal and use it to create an Azure VM with SQL
 
 	![Picture 15](images/dp-3300-module-11-lab-15.png)
 
-	Make sure that **Boot diagnostics** has the button for **Enable with managed storage account (recommended)** selected. 
-	Verify that **Enable auto_shutdown** is off. 
+	Please leave the auto shutdown optioen enabled at 19:00. If you forget to shut down the VM at the end of the day, it will automatically shut down at 19:00 and save you a lot of money. Understand that this is **not** desirable in a production environment! ;-)
 
 
 7. Navigate to the Advanced tab and review the configuration. 
@@ -133,13 +130,15 @@ Students will explore the Azure Portal and use it to create an Azure VM with SQL
 
 	![Picture 17](images/dp-3300-module-11-lab-17.png)
 
- 
+	By default, the SQL Server Azure VM templates create one premium disk with read caching for data, one premium disk without caching for transaction log, and uses the local SSD (D:\ on Windows) for tempdb.
 
-	Note—you can also configure the storage for your SQL Server VM on this screen. By default, the SQL Server Azure VM templates create one premium disk with read caching for data, one premium disk without caching for transaction log, and uses the local SSD (D:\ on Windows) for tempdb.
+	Reconfigure both data and transaction log disks for 8 GB of disk space. 
+
+	Please notice! If you fail to reconfigure the disks, it will costs you a lot of money since the default size per disk is 1 TB. This might stop you from performing additional exercises.
 
 
 9. Select the Review + create button. Then select the Create button.  
-‎
+
     ![Picture 18](images/dp-3300-module-11-lab-18.png)
 
 
@@ -153,22 +152,9 @@ Students will explore the Azure Portal and use it to create an Azure VM with SQL
 	![Picture 20](images/dp-3300-module-11-lab-20.png)
 
 
-# Exercise 2: Connect to SQL Server and Restore a Backup
-
-**Estimated Time: 10 minutes**
-
-The main tasks for this exercise are as follows: 
-
-1. Create an RDP (Remote Desktop Protocol) connection to SQL Server on an Azure Virtual Machine
-
-2. Download a database backup file.
-
-3. Restore the database in SQL Server using SQL Server Management Studio
-
-4. Query the database to confirm its availability
-
+# Exercise 2: Connect to the VM and run SQL Server Management Studio
  
-## Task 1: Connect to the Virtual Machine and download the backup file
+## Task 1: Connect to the Virtual Machine
 
 1. On the Overview page for the virtual machine, select the Connect button and choose RDP. 
 
@@ -180,7 +166,7 @@ The main tasks for this exercise are as follows:
 	![Picture 22](images/dp-3300-module-11-lab-22.png)
 
 3. Open the RDP file that was just downloaded. When a dialog appears asking if you want to connect, select the Connect button.   
-‎	![Picture 23](images/dp-3300-module-11-lab-23.png)
+	![Picture 23](images/dp-3300-module-11-lab-23.png)
 
  
 4. In the Windows Security dialog if you receive the PIN dialog, select More choices. Then choose Use a different account. If you don’t receive the PIN dialog, you can proceed to Step 5.
@@ -213,41 +199,33 @@ The main tasks for this exercise are as follows:
 	![Picture 29](images/dp-3300-module-11-lab-29.png)
 
  
-10. Open Internet Explorer by selecting the icon from the task bar. 
+ 
+## Task 2: Restore the Database and Verify its Availability
+
+1. Open Internet Explorer by selecting the icon from the task bar. 
 
 	![Picture 30](images/dp-3300-module-11-lab-30.png)
 
 
 
-11. In Internet Explorer, navigate to the following URL: 
+1. In Internet Explorer, navigate to the following URL: 
 
 	[https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksDW2017.bak](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksDW2017.bak)
 
 	
 
 	A dialog will appear asking if you would like to run or save the file.   
-	‎![Picture 31](images/dp-3300-module-11-lab-31.png)
+	![Picture 31](images/dp-3300-module-11-lab-31.png)
 
  
 
-12. In the dialog, select the dropdown next to Save and choose Save As. 
+1. In the dialog, select the dropdown next to Save and choose Save As. 
 
 	![Picture 32](images/dp-3300-module-11-lab-32.png)
 
  
-
-13. In the Save As dialog, navigate to the following folder location:   
-‎C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\Backup.  
-‎ Leave the file name as AdventureWorksDW2017 and the type as BAK file. Select the Save button. 
-
-    ![Picture 33](images/dp-3300-module-11-lab-33.png)
- 
-## Task 2: Restore the Database and Verify its Availability
-
- 
-
 1. Select the Windows Start button and type SSMS. Select Microsoft SQL Server Management Studio 18 from the list.  
-‎
+
 	![Picture 34](images/dp-3300-module-11-lab-34.png)
 
 
@@ -255,74 +233,3 @@ The main tasks for this exercise are as follows:
 
 
 	![Picture 35](images/dp-3300-module-11-lab-35.png)
-
- 
-
-3. In the Object Explorer, right-click on the Databases node and choose Restore Database…
-
-	![Picture 36](images/dp-3300-module-11-lab-36.png)
-
- 
-
-4. In the Restore Database dialog, Select Device under Source, and select the button to the right of device labeled with an ellipsis. 
-
-	![Picture 37](images/dp-3300-module-11-lab-37.png)
-
- 
-
-5. In the Select backup devices dialog, select Add. 
-
-	![Picture 38](images/dp-3300-module-11-lab-38.png)
-
-
-6. In the Local Backup File dialog, select AdventureWorksDW2017.bak and select the OK button. 
-
-	![Picture 39](images/dp-3300-module-11-lab-39.png)
-
- 
-7. Verify that there is now one item listed under Backup media in the Select backup devices dialog. Then select the OK button.
-
-	![Picture 40](images/dp-3300-module-11-lab-40.png)
-
-
-8. Verify that there is one item listed under Backup sets to restore in the Restore Database dialog. Then select the OK button. 
-
-	![Picture 41](images/dp-3300-module-11-lab-41.png)
-
- 
-9. Once the database restore completes, a dialog box will appear with the message "Database 'AdventureWorksDW2017' restored successfully". Select the OK button.
-
-	![Picture 42](images/dp-3300-module-11-lab-42.png)
-
- 
-
-10. In the Object Explorer, expand the Databases node, then expand the AdventureWorksDW2017 node, then expand the Tables node. Verify that the database contains several tables including dbo.DimAccount.
-
-	![Picture 43](images/dp-3300-module-11-lab-43.png)
-
- 
-11. In Management Studio, select the AdventureWorksDW2017 node in the Object Explorer. Then select the New Query button. 
-
-	![Picture 44](images/dp-3300-module-11-lab-44.png)
-
-
-12. Copy and paste the following statement into the new query window: 
-
-	```SQL
-	SELECT CalendarYear, Sum(SalesAmount) SalesAmount 
-
-	FROM dbo.FactInternetSales FS
-
-	INNER JOIN dbo.DimDate DD ON FS.OrderDateKey = DD.DateKey
-
-	GROUP BY CalendarYear
-	```
-
-	![Picture 45](images/dp-3300-module-11-lab-45.png)
-
-
-13. Select the Execute button execute the query. Verify that the sales amount for 2010 is **43421.0364**. 
-
-	![Picture 46](images/dp-3300-module-11-lab-46.png)
-
- 
