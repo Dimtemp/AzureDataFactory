@@ -1,4 +1,10 @@
-## Exercise 2: Ingest data using the Copy Activity
+# Lab: Ingest data using the Copy Activity
+
+At the end of this lad, you will have:
+
+1. Ingested data using the Copy Activity
+1. Used the Mapping Data Flow task to perform transformation
+1. Performed transformations using a compute resource
 
 
 ### Task 1: Add the Copy Activity to the designer
@@ -17,7 +23,7 @@
 
 3. Click on the **pencil icon** on the left sidebar and select the **+ pipeline button** to open the authoring canvas.
 
-4. **Add a copy activity** In the Activities pane, open the **Move and Transform** accordion and drag the **Copy data** activity onto the pipeline canvas.
+4. In the Activities pane, open the **Move and Transform** section and drag the **Copy data** activity onto the pipeline canvas.
 
     ![Adding the Copy Activity to Azure Data Factory in the Azure Portal](images/M07-E02-T01-img01.png)
 
@@ -38,7 +44,7 @@
 
 6. In the **Authentication type** drop down, select **Anonymous**. and click on **Create**.
 
-    -  Once you have created and selected the linked service, specify the rest of your dataset settings. These settings specify how and where in your connection we want to pull the data. As the url is pointed at the file already, no relative endpoint is required. As the data has a header in the first row, set **First row as header** to be true and select Import schema from **connection/store** to pull the schema from the file itself. Select **Get** as the request method. You will see the following screen
+    -  Once you have created and selected the linked service, specify the rest of your dataset settings. These settings specify how and where in your connection we want to pull the data. As the url is pointed at the file already, no relative endpoint is required. As the data has a header in the first row, set **First row as header** to be true and select Import schema from **connection/store** to pull the schema from the file itself. Select **GET** as the request method. You will see the following screen
 
         ![Creating a linked service and dataset in Azure Data Factory in the Azure Portal](images/M07-E02-T02-img01.png)
            
