@@ -37,7 +37,7 @@ Students will be able to create Azure storage accounts and Data Lake Storage acc
 
         - Select **Make read access to data available in the event of regional unavailability.**
 
-            ![Create storage account settings in the Azure portal](Linked_Image_Files/M02-E02-T02-img01.png)
+            ![Create storage account settings in the Azure portal](images/M02-E02-T02-img01.png)
 
 6. Click **Review + create**.
 
@@ -60,7 +60,7 @@ Students will be able to create Azure storage accounts and Data Lake Storage acc
 
     - Public access level: **Private (no anonymous access)**
 
-        ![Create a Container in the Azure portal](Linked_Image_Files/M02-E02-T03-img01.png)
+        ![Create a Container in the Azure portal](images/M02-E02-T03-img01.png)
 
 5. In the **New Container** screen, click **Create**.
 
@@ -70,7 +70,7 @@ Students will be able to create Azure storage accounts and Data Lake Storage acc
 
 7. Repeat steps 4 -5 to create a container named **tweets** with the public access level of **Private (no anonymous access)**. Your screen should look as the graphic below:
 
-    ![List of Containers in the Azure portal](Linked_Image_Files/M02-E02-T03-img02.png)
+    ![List of Containers in the Azure portal](images/M02-E02-T03-img02.png)
 
 ### Task 4: Upload some graphics to the images container of the storage account.
 
@@ -147,7 +147,7 @@ The main tasks for this exercise are as follows:
 
 6. Under Data Lake Storage Gen2, check the checkbox for **Enable hierarchical namespace**.
 
-    ![Defining the Hierarchical Namespace setting in Create Storage Account screen in the Azure portal](Linked_Image_Files/M02-E03-T01-img01.png)
+    ![Defining the Hierarchical Namespace setting in Create Storage Account screen in the Azure portal](images/M02-E03-T01-img01.png)
 
 7. In the **Create a storage account** blade, click **Review + create**.
 
@@ -173,7 +173,7 @@ The main tasks for this exercise are as follows:
 
    > **Note**: The creation of the file system is immediate and will appear in the list of the **awdlsstudxx - Containers** screen as follows.
 
-    ![File Systems listed in the Azure portal](Linked_Image_Files/M02-E03-T02-img01.png)
+    ![File Systems listed in the Azure portal](images/M02-E03-T02-img01.png)
 
 > **Result**: After you completed this exercise, you have created a Data Lake Gen2 Storage account named awdlsstudxx that has a file system named data and logs.
 
@@ -195,7 +195,7 @@ The main tasks for this exercise are as follows:
 
 15. After you successfully sign in with an Azure account, the account and the Azure subscriptions associated with that account are added to the left pane. Select the Azure subscriptions that you want to work with, and then select **Open explorer**. The left pane displays the storage accounts associated with the selected Azure subscriptions.
 
-    ![Azure Storage Explore](Linked_Image_Files/M02-E04-T01-img01.png)
+    ![Azure Storage Explore](images/M02-E04-T01-img01.png)
 
 ### Task 2: Upload data files to the data and logs container of the Data Lake Gen II Storage Account.
 
@@ -221,7 +221,7 @@ The main tasks for this exercise are as follows:
 
 8. In the **Upload Files** screen, click on the **Upload** button.
 
-   ![Uploading files in Azure Storage Explore](Linked_Image_Files/M02-E04-T02-img01.png)
+   ![Uploading files in Azure Storage Explore](images/M02-E04-T02-img01.png)
 
 9. Under **Blob Containers**, click on the arrow to expand it and show the **data** file system. Click on the **data** file system.
 
@@ -241,7 +241,7 @@ The main tasks for this exercise are as follows:
 
    > **Note**: The upload of the files will take approximately 5 seconds. You will see a message in Azure Storage Explorer that states **Your view may be out of data. Do you want to refresh? Click Yes**. Once completed, all two files will appear in a list in the upload blobs screen.
 
-   ![Files uploaded to Containers in Azure Storage Explore](Linked_Image_Files/M02-E04-T02-img02.png)
+   ![Files uploaded to Containers in Azure Storage Explore](images/M02-E04-T02-img02.png)
 
 16. In Azure Storage Explorer, in the data file system, click on the **+ New Folder** button.
 

@@ -29,7 +29,7 @@ The main tasks for this exercise are as follows:
 
 4. **Add a copy activity** In the Activities pane, open the **Move and Transform** accordion and drag the **Copy data** activity onto the pipeline canvas.
 
-    ![Adding the Copy Activity to Azure Data Factory in the Azure Portal](Linked_Image_Files/M07-E02-T01-img01.png)
+    ![Adding the Copy Activity to Azure Data Factory in the Azure Portal](images/M07-E02-T01-img01.png)
 
 
 ### Task 2: Create a new HTTP dataset to use as a source
@@ -50,13 +50,13 @@ The main tasks for this exercise are as follows:
 
     -  Once you have created and selected the linked service, specify the rest of your dataset settings. These settings specify how and where in your connection we want to pull the data. As the url is pointed at the file already, no relative endpoint is required. As the data has a header in the first row, set **First row as header** to be true and select Import schema from **connection/store** to pull the schema from the file itself. Select **Get** as the request method. You will see the following screen
 
-        ![Creating a linked service and dataset in Azure Data Factory in the Azure Portal](Linked_Image_Files/M07-E02-T02-img01.png)
+        ![Creating a linked service and dataset in Azure Data Factory in the Azure Portal](images/M07-E02-T02-img01.png)
            
     - Click **OK** once completed.
    
     a. To verify your dataset is configured correctly, click **Preview data** in the Source tab of the copy activity to get a small snapshot of your data.
    
-   ![Previewing in Azure Data Factory in the Azure Portal](Linked_Image_Files/M07-E02-T02-img02.png)
+   ![Previewing in Azure Data Factory in the Azure Portal](images/M07-E02-T02-img02.png)
 
 ### Task 3: Create a new ADLS Gen2 dataset sink
 
@@ -70,7 +70,7 @@ The main tasks for this exercise are as follows:
 
 5. In the New linked service (Azure Data Lake Storage Gen2) blade, select your authentication method as **Account key**, select your **Azure Subscription** and select your Storage account. You will see a screen as follows:
 
-   ![Create a Sink in Azure Data Factory in the Azure Portal](Linked_Image_Files/M07-E02-T03-img01.png)
+   ![Create a Sink in Azure Data Factory in the Azure Portal](images/M07-E02-T03-img01.png)
 
 6. Click on **Create**
 
@@ -80,7 +80,7 @@ The main tasks for this exercise are as follows:
 
 9. Browse to the AzureDataFactory\Labfiles\moviesDB.csv file.
 
-   ![Setting properties of a Sink in Azure Data Factory in the Azure Portal](Linked_Image_Files/M07-E02-T03-img02.png)
+   ![Setting properties of a Sink in Azure Data Factory in the Azure Portal](images/M07-E02-T03-img02.png)
 
 10. Click **OK** once completed.
 
@@ -92,7 +92,7 @@ At this point, you have fully configured your copy activity. To test it out, cli
 
 2. To view a more detailed description of the activity output, click on the eyeglasses icon. This will open up the copy monitoring screen which provides useful metrics such as Data read/written, throughput and in-depth duration statistics.
 
-   ![Monitoring a pipeline in Azure Data Factory in the Azure Portal](Linked_Image_Files/M07-E02-T04-img01.png)
+   ![Monitoring a pipeline in Azure Data Factory in the Azure Portal](images/M07-E02-T04-img01.png)
 
 3. To verify the copy worked as expected, open up your ADLS gen2 storage account and check to see your file was written as expected.
 

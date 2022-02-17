@@ -9,7 +9,7 @@ Now that you have moved the data into Azure Data Lake Store Gen2, you are ready 
 
 1. **Add a Data Flow activity** In the Activities pane, open the **Move and Transform** accordion and drag the **Data Flow** activity onto the pipeline canvas and connect with the **Copy data** activity we created earlier. 
 
-    ![Adding a Mapping Data Flow in Azure Data Factory](Linked_Image_Files/M07-E03-T01-img01.png)
+    ![Adding a Mapping Data Flow in Azure Data Factory](images/M07-E03-T01-img01.png)
 
 2. Turn the **Data Flow Debug** slider located at the top of the authoring module on, and click **OK** in the **Turn on data flow debug** screen that appears.  
 
@@ -22,7 +22,7 @@ Now that you have moved the data into Azure Data Lake Store Gen2, you are ready 
 
 1. **Add an ADLS source**: Click on the Mapping Data Flow object in the canvas. Go to the source settings tab. In the **Dataset** dropdown, select your **ADLS** dataset used in your Copy activity
 
-    ![Adding a Source to a Mapping Data Flow in Azure Data Factory](Linked_Image_Files/M07-E03-T02-img01.png)
+    ![Adding a Source to a Mapping Data Flow in Azure Data Factory](images/M07-E03-T02-img01.png)
 
 
     * If your dataset is pointing at a folder with other files, you may need to create another dataset or utilize parameterization to make sure only the moviesDB.csv file is read
@@ -34,24 +34,24 @@ Now that you have moved the data into Azure Data Lake Store Gen2, you are ready 
 
 1. **Add a Select transformation to rename and drop a column**: In the preview of the data, you may have noticed that the "Rotton Tomatoes" column is misspelled. To correctly name it and drop the unused Rating column, you can add a [Select transformation](https://docs.microsoft.com/azure/data-factory/data-flow-select) by clicking on the + icon next to your ADLS source node and choosing **Select** under Schema modifier.
     
-    ![Adding a Transformation to a Mapping Data Flow in Azure Data Factory](Linked_Image_Files/M07-E03-T03-img01.png)
+    ![Adding a Transformation to a Mapping Data Flow in Azure Data Factory](images/M07-E03-T03-img01.png)
 
     In the **Name as** field, under the **Select settings** tab, change 'Rotton' to 'Rotten'. To drop the Rating column, hover over it and click on the trash can icon.
 
-    ![Using the Select Transformation to a Mapping Data Flow in Azure Data Factory](Linked_Image_Files/M07-E03-T03-img02.png)
+    ![Using the Select Transformation to a Mapping Data Flow in Azure Data Factory](images/M07-E03-T03-img02.png)
 
 2. **Add a Filter Transformation to filter out unwanted years**: Say you are only interested in movies made after 1951. You can add a [Filter transformation](https://docs.microsoft.com/azure/data-factory/data-flow-filter) to specify a filter condition by clicking on the **+ icon** next to your Select transformation and choosing **Filter** under Row Modifier. Click on the **expression box** to open up the [Expression builder](https://docs.microsoft.com/azure/data-factory/concepts-data-flow-expression-builder) and enter in your filter condition. Using the syntax of the [Mapping Data Flow expression language](https://docs.microsoft.com/azure/data-factory/data-flow-expression-functions), **toInteger(year) > 1950** will convert the string year value to an integer and filter rows if that value is above 1950.
 
-    ![Using the Filter Transformation to a Mapping Data Flow in Azure Data Factory](Linked_Image_Files/M07-E03-T03-img03.png)
+    ![Using the Filter Transformation to a Mapping Data Flow in Azure Data Factory](images/M07-E03-T03-img03.png)
 
     When you clicked on **open expression builder** you can verify your condition is working properly. This will also show by a check mark in the **Filter on** textbox.
 
-    ![Using the Expression Builder in the Mapping Data Flow in Azure Data Factory](Linked_Image_Files/M07-E03-T03-img04.png)
+    ![Using the Expression Builder in the Mapping Data Flow in Azure Data Factory](images/M07-E03-T03-img04.png)
 
 
 3. **Add a Derive Transformation to calculate primary genre**: As you may have noticed, the genres column is a string delimited by a '|' character. If you only care about the *first* genre in each column, you can derive a new column named **PrimaryGenre** via the [Derived Column](https://docs.microsoft.com/azure/data-factory/data-flow-derived-column) transformation by clicking on the **+ icon** next to your Filter transformation and choosing **Derived Column** under Schema Modifier. Similar to the filter transformation, the derived column uses the Mapping Data Flow expression builder to specify the values of the new column.
 
-    ![Using the Derived Transformation to a Mapping Data Flow in Azure Data Factory](Linked_Image_Files/M07-E03-T03-img05.png)
+    ![Using the Derived Transformation to a Mapping Data Flow in Azure Data Factory](images/M07-E03-T03-img05.png)
 
     In this scenario, you are trying to extract the first genre from the genres column which is formatted as 'genre1|genre2|...|genreN'. Use the **locate** function to get the first 1-based index of the '|' in the genres string. Using the **iif** function, if this index is greater than 1, the primary genre can be calculated via the **left** function which returns all characters in a string to the left of an index. Otherwise, the PrimaryGenre value is equal to the genres field. You can verify the output via the expression builder's Data preview pane.
 
@@ -67,28 +67,28 @@ Now that you have moved the data into Azure Data Lake Store Gen2, you are ready 
 
     - In the **Window settings** pane under the **Over** tab, select **PrimaryGenre** and add **year** by clicking on **+** and selecting **year** from the dropdown.
 
-    ![Window Over](Linked_Image_Files/WindowOver.PNG "Window Over")
+    ![Window Over](images/WindowOver.PNG "Window Over")
 
     - In the **Sort settings** pane, select the **Rotten Tomato** column, select **Descending** under **Order** and check **Nulls first**
 
 
-    ![Window Sort](Linked_Image_Files/WindowSort.PNG "Window Sort")
+    ![Window Sort](images/WindowSort.PNG "Window Sort")
 
    - In the **Range by settings** pane, leave all settings per default.
 
-    ![Window Bound](Linked_Image_Files/WindowBound.PNG "Window Bound")
+    ![Window Bound](images/WindowBound.PNG "Window Bound")
 
    - In the **Window columns settings** pane, rename the blank column to **RatingsRank** and enter as expression **rank()**
 
 
-    ![Window Rank](Linked_Image_Files/WindowRank.PNG "Window Rank")
+    ![Window Rank](images/WindowRank.PNG "Window Rank")
 
 5. **Aggregate ratings with an Aggregate Transformation**: Now that you have gathered and derived all your required data, we can add an [Aggregate transformation](https://docs.microsoft.com/azure/data-factory/data-flow-aggregate) to calculate metrics based on a desired group by clicking on the **+ icon** next to your Window transformation and clicking **Aggregate** under Schema modifier. As you did in the window transformation, lets group movies by PrimaryGenre and year
 
     - Under the **Aggregate settings** tab, select **Group by**.
     - Using the dropdown select the column **Primary Genre** and add the **year** column by clicking **+**, and dropdown.
     
-    ![Using the Aggregate Transformation to a Mapping Data Flow in Azure Data Factory](Linked_Image_Files/M07-E03-T03-img10.png)
+    ![Using the Aggregate Transformation to a Mapping Data Flow in Azure Data Factory](images/M07-E03-T03-img10.png)
 
     In the Aggregates tab, you can aggregations calculated over the specified group by columns. For every genre and year, lets get the average Rotten Tomatoes rating, the highest and lowest rated movie (utilizing the windowing function) and the number of movies that are in each group. Aggregation significantly reduces the amount of rows in your transformation stream and only propagates the group by and aggregate columns specified in the transformation.
 
@@ -99,7 +99,7 @@ Now that you have moved the data into Azure Data Lake Store Gen2, you are ready 
         - NumberOfMovies: count()
 
 
-    ![Configuring the Aggregate Transformation to a Mapping Data Flow in Azure Data Factory](Linked_Image_Files/M07-E03-T03-img11.png)
+    ![Configuring the Aggregate Transformation to a Mapping Data Flow in Azure Data Factory](images/M07-E03-T03-img11.png)
 
     * To see how the aggregate transformation changes your data, use the Data Preview tab
    
@@ -108,7 +108,7 @@ Now that you have moved the data into Azure Data Lake Store Gen2, you are ready 
 
     - From the dropdown next to **Alter row conditions** in the **Alter row settings** tab, please select **Upsert if**. In the expression write **true()**
 
-    ![Using the Alter Row Transformation to a Mapping Data Flow in Azure Data Factory](Linked_Image_Files/M07-E03-T03-img12.png)
+    ![Using the Alter Row Transformation to a Mapping Data Flow in Azure Data Factory](images/M07-E03-T03-img12.png)
 
     
 
@@ -146,24 +146,24 @@ Now that you have moved the data into Azure Data Lake Store Gen2, you are ready 
     11. Click **Create** when finished.
 
     12. In the **Set properties** page, select **Create new table** and enter in the schema of **dbo** and the  table name of **Ratings**. Click **OK** once completed.
-    ![Creating an Azure Synapse Analytics table in Azure Data Factory](Linked_Image_Files/M07-E03-T04-img02.png)
+    ![Creating an Azure Synapse Analytics table in Azure Data Factory](images/M07-E03-T04-img02.png)
 
     13. Since an upsert condition was specified, you need to go to the Settings tab and select **Allow upsert**.
     
     14. For **Key columns** select **List of Columns** and add through **+** the two columns PrimaryGenre and year. based on key columns PrimaryGenre and year.
-    ![Configuring Sink settings in Azure Data Factory](Linked_Image_Files/M07-E03-T04-img03.png)
+    ![Configuring Sink settings in Azure Data Factory](images/M07-E03-T04-img03.png)
 
     15. In the **Mapping** pane make sure you untick **Auto mapping**. 
 
 At this point, You have finished building your 8 transformation Mapping Data Flow. It's time to run the pipeline and see the results!
 
-![Completed Mapping Data Flow in Azure Data Factory](Linked_Image_Files/M07-E03-T04-img04.png)
+![Completed Mapping Data Flow in Azure Data Factory](images/M07-E03-T04-img04.png)
 
 ## Task 5: Running the Pipeline
 
 1. Go to the pipeline1 tab in the canvas. Because Azure Synapse Analytics in Data Flow uses [PolyBase](https://docs.microsoft.com/sql/relational-databases/polybase/polybase-guide?view=sql-server-2017), you must specify a blob or ADLS staging folder. In the **Settings** tab of the data flow, open up the **Staging** accordion and select your ADLS linked service and specify a staging folder path such as **data/dw-staging**.
 
-    ![PolyBase configuration in Azure Data Factory](Linked_Image_Files/M07-E03-T05-img01.png)
+    ![PolyBase configuration in Azure Data Factory](images/M07-E03-T05-img01.png)
 
 2. Before you publish your pipeline, run another debug run to confirm it's working as expected. Looking at the **Output** tab, you can monitor the status of both activities as they are running.
 
@@ -181,5 +181,5 @@ At this point, You have finished building your 8 transformation Mapping Data Flo
 and paste: Select count(*) as TotalCount from dbo.Ratings
 
 
-    ![Querying the results in Synapse Studio](Linked_Image_Files/M07-E03-T05-img02.png)
+    ![Querying the results in Synapse Studio](images/M07-E03-T05-img02.png)
 
