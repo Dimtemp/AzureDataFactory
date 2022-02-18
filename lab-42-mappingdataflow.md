@@ -34,18 +34,25 @@ You might have closed the Azure Data Factory studio. If so, please follow this p
 
 3. Select the data flow activity in the pipeline workspace. In the lower pane, select the settings tab, click **+ New** for the variable **Dataflow**
 
-1. **Add an ADLS source**: Click on the Mapping Data Flow object in the canvas. Go to the source settings tab. In the **Dataset** dropdown, select your **ADLS** dataset used in your Copy activity
+4. Click on the grey arrow next to **Add Source**. In the dropdown, select **Add Source**.
+
+5. In the Dataset section, Click the down arrow and select the ADLS dataset you created in your Copy activity
 
     ![Adding a Source to a Mapping Data Flow in Azure Data Factory](images/M07-E03-T02-img01.png)
 
 
+NIET MEER VAN TOEPASSING????????????
     * If your dataset is pointing at a folder with other files, you may need to create another dataset or utilize parameterization to make sure only the moviesDB.csv file is read
     * If you have not imported your schema in your ADLS, but have already ingested your data, go to the dataset's 'Schema' tab and click 'Import schema' so that your data flow knows the schema projection.
+NIET MEER VAN TOEPASSING????????????
 
-    Once your debug cluster is warmed up, verify your data is loaded correctly via the **Data preview** tab. Once you click the refresh button, Mapping Data Flow will show calculate a snapshot of what your data looks like when it is at each transformation.
+
+1. Click the **Test connection** button next to the dataset. Only proceed if the connection is succesfull.
+
+1. Once your debug cluster is warmed up, verify your data is loaded correctly via the **Data preview** tab. Once you click the refresh button, Mapping Data Flow will show calculate a snapshot of what your data looks like when it is at each transformation.
 
 
-## Task 4: Using Mapping Data Flow transformation
+## Task 3: Using Mapping Data Flow transformation
 
 1. **Add a Select transformation to rename and drop a column**: In the preview of the data, you may have noticed that the "Rotton Tomatoes" column is misspelled. To correctly name it and drop the unused Rating column, you can add a [Select transformation](https://docs.microsoft.com/azure/data-factory/data-flow-select) by clicking on the + icon next to your ADLS source node and choosing **Select** under Schema modifier.
     

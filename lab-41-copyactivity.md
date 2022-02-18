@@ -114,7 +114,7 @@ At the end of this lad, you will have:
 
 3. Select the **DelimitedText** format tile and click **Continue**.
 
-4. In Set Properties blade, give your dataset a name such as **ADLS** and click on the **Linked Service** dropdown. Select **New**.
+4. In Set Properties blade, give your dataset this name: **ADLS** and click on the **Linked Service** dropdown. Select **New**.
 
 5. In the New linked service (Azure Data Lake Storage Gen2) blade, select your authentication method as **Account key**, select your **Azure Subscription** and select your Storage account. You will see a screen as follows:
 
@@ -124,14 +124,9 @@ At the end of this lad, you will have:
 
 7. Once you have configured your linked service, you enter the set properties blade. As you are writing to this dataset, you want to point the folder where you want moviesDB.csv copied to. In the example below, I am writing to folder **output** in the file system **data**. While the folder can be dynamically created, the file system must exist prior to writing to it.
 
-8. Set **First row as header** to be true. Select Import Schema: From sample file OF FROM STORE???????????????????????????????????????
+8. Set **First row as header** to be true. Select Import Schema: **From sample file**.
 
-
-
-
-
-
-9. Browse to the AzureDataFactory\Labfiles\moviesDB.csv file.
+9. Browse to the moviesDB.csv file on your desktop.
 
    ![Setting properties of a Sink in Azure Data Factory in the Azure Portal](images/M07-E02-T03-img02.png)
 
