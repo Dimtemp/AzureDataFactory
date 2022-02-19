@@ -4,7 +4,9 @@
 
 Students will provision an Azure Databricks instance and will then create a workspace that will be used to perform a simple task.
 
-> Note: The next Azure resources might be very expensive. Especially when running for long periods of time. If you destroy the resources at the end of this exercise, expenses will stat at a minimum. If you forget to delete the resources at the end of this exercises, it might deplete your balance very quickly!
+> Note 1: The next Azure resources might be very expensive. Especially when running for long periods of time. If you destroy the resources at the end of this exercise, expenses will stat at a minimum. If you forget to delete the resources at the end of this exercises, it might deplete your balance very quickly!
+
+> Note 2: Azure Databricks is a big topic to cover. Since the topic of Databricks is not discussed in this course, we only focus in integrating between Azure Data Factory and Azure Databricks. In Azure Databricks we will run an arbitrary notebook. As soon as the integration works, you can imagine any Azure Databricks notebook to run within Azure Data Factory.
 
 
 ## Task 1: Create and configure an Azure Databricks instance.
