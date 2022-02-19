@@ -54,7 +54,7 @@ NIET MEER VAN TOEPASSING????????????
 
 ## Task 3: Using Mapping Data Flow transformation
 
-1. **Add a Select transformation to rename and drop a column**: In the preview of the data, you may have noticed that the "Rotton Tomatoes" column is misspelled. To correctly name it and drop the unused Rating column, you can add a [Select transformation](https://docs.microsoft.com/azure/data-factory/data-flow-select) by clicking on the + icon next to your ADLS source node and choosing **Select** under Schema modifier.
+1. **Add a Select transformation to rename and drop a column**: In the preview of the data, you may have noticed that the "Rotton Tomato" column is misspelled. To correctly name it and drop the unused Rating column, you can add a [Select transformation](https://docs.microsoft.com/azure/data-factory/data-flow-select) by clicking on the + icon next to your ADLS source node and choosing **Select** under Schema modifier.
     
     ![Adding a Transformation to a Mapping Data Flow in Azure Data Factory](images/M07-E03-T03-img01.png)
 
@@ -84,7 +84,7 @@ NIET MEER VAN TOEPASSING????????????
 
 
 
-4. **Rank movies via a Window Transformation** Say you are interested in how a movie ranks within its year for its specific genre. You can add a [Window transformation](https://docs.microsoft.com/azure/data-factory/data-flow-window) to define window-based aggregations by clicking on the **+ icon** next to your Derived Column transformation and clicking **Window** under Schema modifier. To accomplish this, specify what you are windowing over, what you are sorting by, what the range is, and how to calculate your new window columns. In this example, we will window over PrimaryGenre and year with an unbounded range, sort by Rotten Tomato descending, a calculate a new column called RatingsRank which is equal to the rank each movie has within its specific genre-year.
+4. **Rank movies via a Window Transformation** Say you are interested in how a movie ranks within its year for its specific genre. You can add a [Window transformation](https://docs.microsoft.com/azure/data-factory/data-flow-window) to define window-based aggregations by clicking on the **+ icon** next to your Derived Column transformation and clicking **Window** under Schema modifier. To accomplish this, specify what you are windowing over, what you are sorting by, what the range is, and how to calculate your new window columns. In this example, we will window over PrimaryGenre and year with an unbounded range, sort by Rotten Tomato descending, and calculate a new column called RatingsRank which is equal to the rank each movie has within its specific genre-year.
 
 
     - In the **Window settings** pane under the **Over** tab, select **PrimaryGenre** and add **year** by clicking on **+** and selecting **year** from the dropdown.
@@ -112,7 +112,7 @@ NIET MEER VAN TOEPASSING????????????
     
     ![Using the Aggregate Transformation to a Mapping Data Flow in Azure Data Factory](images/M07-E03-T03-img10.png)
 
-    In the Aggregates tab, you can aggregations calculated over the specified group by columns. For every genre and year, lets get the average Rotten Tomatoes rating, the highest and lowest rated movie (utilizing the windowing function) and the number of movies that are in each group. Aggregation significantly reduces the amount of rows in your transformation stream and only propagates the group by and aggregate columns specified in the transformation.
+    In the Aggregates tab, you can calculate aggregations over the specified group-by columns. For every genre and year, lets get the average Rotten Tomatoes rating, the highest and lowest rated movie (utilizing the windowing function) and the number of movies that are in each group. Aggregation significantly reduces the amount of rows in your transformation stream and only propagates the group by and aggregate columns specified in the transformation.
 
     - Under the **Aggregate settings** tab, now select **Aggregates**. Add the following columns by clicking **+** and then **Add column**, with their respective expressions:
         - AverageRating: avg(toInteger({Rotten Tomato}))
@@ -123,7 +123,7 @@ NIET MEER VAN TOEPASSING????????????
 
     ![Configuring the Aggregate Transformation to a Mapping Data Flow in Azure Data Factory](images/M07-E03-T03-img11.png)
 
-    * To see how the aggregate transformation changes your data, use the Data Preview tab
+    * To see how the aggregate transformation changes your data, use the Data preview tab.
    
 
 6. **Specify Upsert condition via an Alter Row Transformation** If you are writing to a tabular sink, you can specify insert, delete, update and upsert policies on rows using the [Alter Row transformation](https://docs.microsoft.com/azure/data-factory/data-flow-alter-row) by clicking on the **+ icon** next to your Aggregate transformation and clicking **Alter Row** under Row modifier. Since you are always inserting and updating, you can specify that all rows will always be upserted.
@@ -132,43 +132,53 @@ NIET MEER VAN TOEPASSING????????????
 
     ![Using the Alter Row Transformation to a Mapping Data Flow in Azure Data Factory](images/M07-E03-T03-img12.png)
 
+    * To see how the Alter Row transformation changes your data, use the Data preview tab.
     
 
 ### Task 4: Writing to a Data Sink
 
 1. **Write to a Azure Synapse Analytics Sink**: Now that you have finished all your transformation logic, you are ready to write to a Sink.
+
     1. Add a **Sink** by clicking on the **+ icon** next to your Alter row transformation and clicking **Sink** under Destination.
 
-    2. 
+    2. In the Sink tab, create a dataset via the **+ New button** next to **Dataset**.
+
+    3. Select **Azure Blob Storage** from the tile list and click **Continue**
+
+    3. Select the **DelimitedText** format tile and click **Continue**.
+
+    4. In Set Properties blade, give your dataset this name: **RankedMovies** and click on the **Linked Service** dropdown. Select **New**.
+
+    5. In the New linked service blade, select your authentication method as **Account key**, select your **Azure Subscription** and select your Storage account. You will see a screen as follows:
+
+    ![Create a Sink in Azure Data Factory in the Azure Portal](images/M07-E02-T03-img01.png)
+
+    6. Click the **Test connection** button in the lower right corner of the screen. If the test is succesfull, click on **Create**.
+
+    7. Once you have configured your linked service, you enter the set properties blade. Respectively, specify **data** as the containter/file system. Specify **output** as the Directory, and enter **RankedMovies.csv** as the File name.
+
+    8. Set **First row as header** to be true. Select Import Schema: **From connection/store**.
 
 
 
 
 
-===== Synapse: knip
+    UITWERKEN!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-    2. In the Sink tab, create a new data warehouse dataset via the **+ New button** next to **Dataset**.
+    ![Setting properties of a Sink in Azure Data Factory in the Azure Portal](images/M07-E02-T03-img02.png)
 
-    3. Select **Azure Synapse Analytics** from the tile list and click **Continue**
+    10. Click **OK** once completed.
 
-    4. Select **+New** under **Linked service**. Configure your Azure Synapse Analytics connection to connect to the DWDB database created in Module 5. 
 
-    5. **Account selection method**: **From Azure subscription**
 
-    6. **Azure subscription**: select the subscription used for this lab.
 
-    7. **Server name**: select your **wrkspcxx** server. 
 
-    8. **Database name**: **DWDB**
 
-    9. **Authentication type**: **SQL authentication**
 
-    10. For **username** use your server admin username, for **Password** use the corresponding password you provided, when setting up the service.
 
-    11. Click **Create** when finished.
 
-    12. In the **Set properties** page, select **Create new table** and enter in the schema of **dbo** and the  table name of **Ratings**. Click **OK** once completed.
-    ![Creating an Azure Synapse Analytics table in Azure Data Factory](images/M07-E03-T04-img02.png)
+
+
 
     13. Since an upsert condition was specified, you need to go to the Settings tab and select **Allow upsert**.
     
@@ -181,11 +191,17 @@ At this point, You have finished building your 8 transformation Mapping Data Flo
 
 ![Completed Mapping Data Flow in Azure Data Factory](images/M07-E03-T04-img04.png)
 
+
 ## Task 5: Running the Pipeline
 
-1. Go to the pipeline1 tab in the canvas. Because Azure Synapse Analytics in Data Flow uses [PolyBase](https://docs.microsoft.com/sql/relational-databases/polybase/polybase-guide?view=sql-server-2017), you must specify a blob or ADLS staging folder. In the **Settings** tab of the data flow, open up the **Staging** accordion and select your ADLS linked service and specify a staging folder path such as **data/dw-staging**.
+1. Go to the pipeline1 tab in the canvas. 
+
+
+Because Azure Synapse Analytics in Data Flow uses [PolyBase](https://docs.microsoft.com/sql/relational-databases/polybase/polybase-guide?view=sql-server-2017), you must specify a blob or ADLS staging folder. In the **Settings** tab of the data flow, open up the **Staging** accordion and select your ADLS linked service and specify a staging folder path such as **data/dw-staging**.
 
     ![PolyBase configuration in Azure Data Factory](images/M07-E03-T05-img01.png)
+
+
 
 2. Before you publish your pipeline, run another debug run to confirm it's working as expected. Looking at the **Output** tab, you can monitor the status of both activities as they are running.
 
@@ -205,3 +221,11 @@ and paste: Select count(*) as TotalCount from dbo.Ratings
 
     ![Querying the results in Synapse Studio](images/M07-E03-T05-img02.png)
 
+
+type: Dataset
+SQL
+lege tabel
+
+type: inline
+SQL
+lege tabel
