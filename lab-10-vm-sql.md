@@ -5,7 +5,7 @@
 Students will explore the Azure Portal and use it to create an Azure VM with SQL Server 2019 installed. Then they will connect to the virtual machine through Remote Desktop Protocol and use the SQL Server Management Studio. 
 
 
-## Task 1: Provision a SQL Server on an Azure Virtual Machine
+## Task 1: Explore the Azure Portal
 
 1. From the lab virtual machine, if you are not already in the portal, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). 
 
@@ -247,50 +247,50 @@ Students will explore the Azure Portal and use it to create an Azure VM with SQL
 
 3. In the Object Explorer, right-click on the Databases node and choose Restore Database…
 
-	![Picture 36](../images/dp-3300-module-11-lab-36.png)
+	![Picture 36](images/dp-3300-module-11-lab-36.png)
 
  
 
 4. In the Restore Database dialog, Select Device under Source, and select the button to the right of device labeled with an ellipsis. 
 
-	![Picture 37](../images/dp-3300-module-11-lab-37.png)
+	![Picture 37](images/dp-3300-module-11-lab-37.png)
 
 
 
 5. In the Select backup devices dialog, select Add. 
 
-	![Picture 38](../images/dp-3300-module-11-lab-38.png)
+	![Picture 38](images/dp-3300-module-11-lab-38.png)
 
 
 6. In the Local Backup File dialog, select AdventureWorksDW2017.bak and select the OK button. 
 
-	![Picture 39](../images/dp-3300-module-11-lab-39.png)
+	![Picture 39](images/dp-3300-module-11-lab-39.png)
 
  
 7. Verify that there is now one item listed under Backup media in the Select backup devices dialog. Then select the OK button.
 
-	![Picture 40](../images/dp-3300-module-11-lab-40.png)
+	![Picture 40](images/dp-3300-module-11-lab-40.png)
 
 
 8. Verify that there is one item listed under Backup sets to restore in the Restore Database dialog. Then select the OK button. 
 
-	![Picture 41](../images/dp-3300-module-11-lab-41.png)
+	![Picture 41](images/dp-3300-module-11-lab-41.png)
 
  
 9. Once the database restore completes, a dialog box will appear with the message "Database 'AdventureWorksDW2017' restored successfully". Select the OK button.
 
-	![Picture 42](../images/dp-3300-module-11-lab-42.png)
+	![Picture 42](images/dp-3300-module-11-lab-42.png)
 
  
 
 10. In the Object Explorer, expand the Databases node, then expand the AdventureWorksDW2017 node, then expand the Tables node. Verify that the database contains several tables including dbo.DimAccount.
 
-	![Picture 43](../images/dp-3300-module-11-lab-43.png)
+	![Picture 43](images/dp-3300-module-11-lab-43.png)
 
  
 11. In Management Studio, select the AdventureWorksDW2017 node in the Object Explorer. Then select the New Query button. 
 
-	![Picture 44](../images/dp-3300-module-11-lab-44.png)
+	![Picture 44](images/dp-3300-module-11-lab-44.png)
 
 
 12. Copy and paste the following statement into the new query window: 
@@ -305,11 +305,11 @@ Students will explore the Azure Portal and use it to create an Azure VM with SQL
 	GROUP BY CalendarYear
 	```
 
-	![Picture 45](../images/dp-3300-module-11-lab-45.png)
+	![Picture 45](images/dp-3300-module-11-lab-45.png)
 
 
 13. Select the Execute button execute the query. Verify that the sales amount for 2010 is **43421.0364**. 
 
-	![Picture 46](../images/dp-3300-module-11-lab-46.png)
+	![Picture 46](images/dp-3300-module-11-lab-46.png)
 
  
