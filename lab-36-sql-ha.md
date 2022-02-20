@@ -40,19 +40,19 @@ Pre-requisites
 
 2. From the menu, select SQL databases as shown below.
 
-	![Picture 16](../images/dp-3300-module-77-lab-01.png)
+	![Picture 16](images/dp-3300-module-77-lab-01.png)
 
 3. Click on the Azure SQL Database that was created in Lab 3. An example is shown below.
 
-	![Picture 17](../images/dp-3300-module-77-lab-02.png)
+	![Picture 17](images/dp-3300-module-77-lab-02.png)
 
 4. In the blade for the database, under Data management, select **Replicas**.
 
-	![Picture 18](../images/dp-3300-module-77-lab-03.png)
+	![Picture 18](images/dp-3300-module-77-lab-03.png)
 
 5. Then click on **Create replica** button on the top left side.
 
-	![Picture 20](../images/dp-3300-module-77-lab-05.png)
+	![Picture 20](images/dp-3300-module-77-lab-05.png)
 
 6. Under **Server**, select **Create New**. On the new server pane, enter a unique server name, a valid admin login, and a secure password, and select the region you chose as the target region and then click **OK** to create the server.
 
@@ -62,7 +62,7 @@ Pre-requisites
 
 9. Select the **...** menu for the secondary server and click **Forced Failover**.
 
-	![Picture 28](../images/dp-3300-module-77-lab-10.png)
+	![Picture 28](images/dp-3300-module-77-lab-10.png)
 
 10. When prompted, click **Yes**. 
 

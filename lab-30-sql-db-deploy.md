@@ -28,11 +28,11 @@ Finally, an Azure Database for PostgreSQL will be deployed to support additional
 
 2. From the Home screen, click on the **Resource Groups** button  
 
-	![Picture 1](../images/dp-3300-module-22-lab-01.png)
+	![Picture 1](images/dp-3300-module-22-lab-01.png)
 
 3. Review your existing Resource Groups and then click on the **Create** button to create a new Resource Group.  
 
-	![Picture 7](../images/dp-3300-module-22-lab-02.png)
+	![Picture 7](images/dp-3300-module-22-lab-02.png)
 
 4. Complete the Create a Resource Group wizard with the required information to create the RG.
 
@@ -44,7 +44,7 @@ Finally, an Azure Database for PostgreSQL will be deployed to support additional
 
 	- Click the **Review + create** button  
 
-	![Picture 4](../images/dp-3300-module-22-lab-03.png)
+	![Picture 4](images/dp-3300-module-22-lab-03.png)
 
 	- Click the **Create** button
 
@@ -52,7 +52,7 @@ Finally, an Azure Database for PostgreSQL will be deployed to support additional
 
 1. In the left navigation pane, click **Virtual Networks**  
 
-	![Picture 6](../images/dp-3300-module-22-lab-04.png)
+	![Picture 6](images/dp-3300-module-22-lab-04.png)
 
 2. Click **+ Create** to open the **Create Virtual Network** page. On the **Basics** tab, complete the following information:
 
@@ -64,11 +64,11 @@ Finally, an Azure Database for PostgreSQL will be deployed to support additional
 
 	- Region: Select the same region where the Resource Group was created (the region nearest to your location)  
 
-	![Picture 9](../images/dp-3300-module-22-lab-05.png)
+	![Picture 9](images/dp-3300-module-22-lab-05.png)
 
 	- Click the **Next: IP Addresses** button  
 
-	![Picture 10](../images/dp-3300-module-22-lab-06.png)
+	![Picture 10](images/dp-3300-module-22-lab-06.png)
 
 3. Configure the virtual network’s IP range for the Azure SQL database endpoint
 
@@ -76,11 +76,11 @@ Finally, an Azure Database for PostgreSQL will be deployed to support additional
 
 	- Click on the **default** subnet. (Note that the Subnet address range you see might be different.)  
 
-	![Picture 12](../images/dp-3300-module-22-lab-07.png)
+	![Picture 12](images/dp-3300-module-22-lab-07.png)
 
 	- In the Edit subnet flyout on the right, expand the Services drop-down, and tick **Microsoft.Sql**  
 
-	![Picture 13](../images/dp-3300-module-22-lab-08.png)
+	![Picture 13](images/dp-3300-module-22-lab-08.png)
 
 	- Click **Save**
 
@@ -92,11 +92,11 @@ Finally, an Azure Database for PostgreSQL will be deployed to support additional
 
 1. From the Azure Portal, click on **+ Create a Resource** at the top of the left side navigation bar  
 
-	![Picture 14](../images/dp-3300-module-22-lab-09.png)
+	![Picture 14](images/dp-3300-module-22-lab-09.png)
 
 2. Search for “SQL databases” in the search box at the top, then click **SQL Databases** from the list of options  
 
-	![Picture 15](../images/dp-3300-module-22-lab-10.png)
+	![Picture 15](images/dp-3300-module-22-lab-10.png)
 
 3. Click the **Create** button
 
@@ -122,7 +122,7 @@ Finally, an Azure Database for PostgreSQL will be deployed to support additional
 
 		- Your New server sidebar should look similar to the one below. Click **OK**
 
-		![A screenshot of a cell phone Description automatically generated](../images/dp-3300-module-22-lab-11.png)
+		![A screenshot of a cell phone Description automatically generated](images/dp-3300-module-22-lab-11.png)
 
     -  On the Create SQL Database page, make sure **Want to use Elastic Pool** is set to **No**
 
@@ -130,7 +130,7 @@ Finally, an Azure Database for PostgreSQL will be deployed to support additional
 
 		- On the Configure screen, for Service tier dropdown, select **Basic**
 
-		![Picture 16](../images/dp-3300-module-22-lab-12.png)
+		![Picture 16](images/dp-3300-module-22-lab-12.png)
 
 		- Click **Basic**
 
@@ -142,15 +142,15 @@ Finally, an Azure Database for PostgreSQL will be deployed to support additional
 
 6. Review settings and then click **Next: Networking**  
 
-	![A screenshot of a cell phone Description automatically generated](../images/dp-3300-module-22-lab-13.png)
+	![A screenshot of a cell phone Description automatically generated](images/dp-3300-module-22-lab-13.png)
 
 7. On the Networking screen, for Connectivity method, click the **Private endpoint** radio button  
 
-	![Picture 19](../images/dp-3300-module-22-lab-14.png)
+	![Picture 19](images/dp-3300-module-22-lab-14.png)
 
 8. Then click the **Add private endpoint** link under Private Endpoints  
 
-	![Picture 20](../images/dp-3300-module-22-lab-15.png)
+	![Picture 20](images/dp-3300-module-22-lab-15.png)
 
 9. Complete the Create private endpoint flyout as follows:
 
@@ -172,11 +172,11 @@ Finally, an Azure Database for PostgreSQL will be deployed to support additional
 
 	- Review settings before clicking **OK**  
 
-	![Picture 21](../images/dp-3300-module-22-lab-16.png)
+	![Picture 21](images/dp-3300-module-22-lab-16.png)
 
 10. Confirm the endpoint appears on the Networking page. 
 
-	![Picture 22](../images/dp-3300-module-22-lab-17.png)
+	![Picture 22](images/dp-3300-module-22-lab-17.png)
 
 11. Click the **Next: Security** button, and then **Next: Additional settings** button.  
 
@@ -184,7 +184,7 @@ Finally, an Azure Database for PostgreSQL will be deployed to support additional
 
 	- Set Use existing data to **Sample**
 
-	![Picture 23](../images/dp-3300-module-22-lab-18.png)
+	![Picture 23](images/dp-3300-module-22-lab-18.png)
 
 13. Click **Review + Create**
 
@@ -197,15 +197,15 @@ Finally, an Azure Database for PostgreSQL will be deployed to support additional
 
 1. From the SQL Database blade, click on the link for the Server name in the top section  
 
-	![Picture 3](../images/dp-3300-module-22-lab-19.png)
+	![Picture 3](images/dp-3300-module-22-lab-19.png)
 
 2. On the SQL Server object’s navigation blade, click **Firewalls and virtual networks** under **Security**
 
-	![Picture 27](../images/dp-3300-module-22-lab-20.png)
+	![Picture 27](images/dp-3300-module-22-lab-20.png)
 
 3. Set **Allow Azure services and resources to access this server** to **Yes**  
 
-	![Picture 6](../images/dp-3300-module-22-lab-21.png)
+	![Picture 6](images/dp-3300-module-22-lab-21.png)
 
 4. Click **Save**, and then click **OK** on the Success message pane.
 
@@ -216,11 +216,11 @@ Finally, an Azure Database for PostgreSQL will be deployed to support additional
 1. Launch Azure Data Studio (ADS) from the lab VM
 
 	- You may see this pop-up at initial launch of Azure Data Studio. If you receive it, click **Yes**  
-![Picture 24](../images/dp-3300-module-22-lab-22.png)
+![Picture 24](images/dp-3300-module-22-lab-22.png)
 
 2. When Azure Data Studio opens, click the **Connections** button in Azure Data Studio’s left sidebar, then the **Add Connection** button
 	
-	![Picture 30](../images/dp-3300-module-22-lab-25.png)
+	![Picture 30](images/dp-3300-module-22-lab-25.png)
 
 3. In the **Connections** sidebar, fill out the Connection Details section with connection information to connect to the SQL database created in the previous Exercise
 
@@ -238,7 +238,7 @@ Finally, an Azure Database for PostgreSQL will be deployed to support additional
 	- Expand the Database drop-down to select **AdventureWorksLT.** 
 	    - **NOTE:** You may be asked to add a firewall rule that allows your client IP access to this server. If you are asked to add a firewall rule, click on **Add account** and login to your Azure account. On Create new firewall screen rule screen, click **OK**.
 		
-	    ![Picture 10](../images/dp-3300-module-22-lab-26.png)
+	    ![Picture 10](images/dp-3300-module-22-lab-26.png)
 	    
     Back on the Connection sidebar, continue filling out the connection details:  
 	
@@ -248,32 +248,32 @@ Finally, an Azure Database for PostgreSQL will be deployed to support additional
 
 	- Review settings and click **Connect**  
 
-	![A screenshot of a cell phone Description automatically generated](../images/dp-3300-module-22-lab-27.png)
+	![A screenshot of a cell phone Description automatically generated](images/dp-3300-module-22-lab-27.png)
 
 4. Azure Data Studio will connect to the database and show some basic information about the database, plus a partial list of objects  
 
-	![A screenshot of a cell phone Description automatically generated](../images/dp-3300-module-22-lab-28.png)
+	![A screenshot of a cell phone Description automatically generated](images/dp-3300-module-22-lab-28.png)
 
 ## Task 2: Query Azure SQL Database with a SQL Notebook
 
 1. In Azure Data Studio, connected to this lab’s AdventureWorksLT database, click the **New Notebook** button  
 
-	![Picture 13](../images/dp-3300-module-22-lab-29.png)
+	![Picture 13](images/dp-3300-module-22-lab-29.png)
 
 2. Click the **+Text** button to add a new text box in the notebook  
 
-	![Picture 14](../images/dp-3300-module-22-lab-30.png)
+	![Picture 14](images/dp-3300-module-22-lab-30.png)
 
 
 **Note:** Within the notebook you can embed plain text to explain queries or result sets.
 
 3. Enter the text **Top Ten Customers by Order SubTotal**, making it Bold if desired  
 
-	![A screenshot of a cell phone Description automatically generated](../images/dp-3300-module-22-lab-31.png)
+	![A screenshot of a cell phone Description automatically generated](images/dp-3300-module-22-lab-31.png)
 
 4. Click the **+ Code** button to add a new cell at the end of the notebook to put a query in  
 
-	![Picture 16](../images/dp-3300-module-22-lab-32.png)
+	![Picture 16](images/dp-3300-module-22-lab-32.png)
 
 5. Paste the following SQL statement into the new cell
 
@@ -320,6 +320,6 @@ select top 10 cat.[Name] as ProductCategory, sum(detail.[OrderQty]) as OrderedQu
 
 11. To run all cells in the notebook and present results, click the **Run Cells** button in the toolbar  
 
-	![Picture 17](../images/dp-3300-module-22-lab-33.png)
+	![Picture 17](images/dp-3300-module-22-lab-33.png)
 
 12. Within Azure Data Studio save the notebook from File menu (either Save or Save As) to the D:\Labfiles\Deploy Azure SQL Database (this folder already exists on the VM) directory. Close the tab for the Notebook from inside of Azure Data Studio. From the File Menu, select Open File, and open the notebook you just saved. Observe that query results were saved along with the queries in the notebook.
