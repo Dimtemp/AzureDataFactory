@@ -71,39 +71,10 @@ In this task, we will connect to our new virtual machine using RDP (Remote Deskt
 
 A new Virtual Machine (Sql2019) will launch inside your Lab. Close the Server Manager and dashboard windows that pop up (click "x" at top right). You should see the blue background of your virtual machine. **Congratulations!** You have deployed and connected to a Virtual Machine running Windows Server and SQL Server. 
 
-# Task 3: Install the web server role and test
-
-In this task, install the Web Server role on the server on the Virtual Machine you just created and ensure the default IIS welcome page will be displayed. 
-
-1. In the newly opened virtual machine, launch PowerShell by searching **PowerShell** in the search bar, when found right click **Windows PowerShell** to **Run as administrator**.
-
-    ![Screenshot of the virtual machine desktop with the start button clicked and PowerShell selected with run as an administrator highlighted.](../Linked_Image_Files/0105.png)
-
-
-
-
 
 **Congratulations!** You have created a new VM running a web server that is accessible via its public IP address. If you had a web application to host, you could deploy application files to the virtual machine and host them for public access on the deployed virtual machine.
 
 
-
-
-
-## Exercise 2: Install Storage Explorer.
-
-1. From the Sql2019 Azure VM, open the Microsoft Edge web browser and navigate to this page for [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/).
-
-5. In the Microsoft Edge dialog box click **Save**, when the download is complete, click on **View downloads**, in the download screen in Microsoft Edge, click on **Open folder**. This will open the Downloads folder.
-
-6. Double click the file **StorageExplorer.exe**, in the User Account Control dialog box click on **Yes**.
-
-7. In the License Agreement screen, select the radio button next to **I agree the agreement**, and then click on **Install**.
-
-   > **Note**: The installation of Storage Explorer can take a few minutes. Azure Storage Explorer allows you to easily manage the contents of your storage account with Azure Storage Explorer. Upload, download, and manage blobs, files, queues, tables, and Cosmos DB entities. It also enables you to gain easy access to manage your virtual machine disks.
-
-8. On completion of the installation, ensure that the checkbox next to **Launch Microsoft Azure Storage Explorer** is selected and then click **Finish**.
-
-9. Microsoft Azure Storage Explorer opens up. Right click the Storage Explorer in the taskbar and select **"Pin to taskbar"**.
 
 
 
