@@ -4,7 +4,7 @@ function New-AzDataFactoryDemoEnvironment {
         [switch]$CleanUpADFResourceGroup,
         [string]$Location = 'westeurope',
         [string]$StorageSkuName = 'Standard_LRS',
-        [string]$ResGroupName = 'ADF',
+        [string]$ResourceGroupName = 'ADF',
 
         [string]$StorageAccountName  = "stor1$(Get-Random -maximum 100000000)",   # min 3 max 24 chars
         [string]$StorageAccountName2 = "adls2$(Get-Random -maximum 100000000)",
@@ -32,26 +32,28 @@ function New-AzDataFactoryDemoEnvironment {
 
     # begin
     if ($CleanUpADFResourceGroup) {
-        Remove-AzResourceGroup -Name $ResGroupName
+        Remove-AzResourceGroup -Name $ResourceGroupName
     } else {
         $cred = New-Object System.Management.Automation.PSCredential ($userName, $Password)
 
         # process
         if (Get-AzStorageAccountNameAvailability -Name $StorageAccountName) {
             $PSDefaultParameterValues=@{
-                "*:ResourceGroupName"=$ResGroupName
+                "*:ResourceGroupName"=$ResourceGroupName
                 "*:Location"=$Location                
             }
 
             # Simple resources
-            New-AzResourceGroup -Name $ResGroupName -Location $Location
+            New-AzResourceGroup -Name $ResourceGroupName -Location $Location
             New-AzDataFactoryV2 -Name $AdfName -Location $Location
             New-AzKeyVault -Name $KeyVaultName -Location $Location
+            # WARNING: Access policy is not set. No user or application have access permission to use this vault. This can happen if the vault was created by a service principal. Please use Set-AzKeyVaultAccessPolicy to set access policies.
+            
             $s1 = New-AzStorageAccount -Location $Location -SkuName $StorageSkuName -Name $StorageAccountName #-AsJob
             $s2 = New-AzStorageAccount -Location $Location -SkuName $StorageSkuName -Name $StorageAccountName2 #-AsJob
 
             # SQL Database
-            $SqlServer = Get-AzSqlServer -ResourceGroupName $ResGroupName
+            $SqlServer = Get-AzSqlServer -ResourceGroupName $ResourceGroupName
             if (!($SqlServer)) {
                 New-AzSqlServer -ServerName $SqlServerName -SqlAdministratorCredentials $cred -Location $Location #-AsJob
             } else {
@@ -68,7 +70,7 @@ function New-AzDataFactoryDemoEnvironment {
 
             Write-Verbose $CosmosAccountName
             New-AzCosmosDBSqlDatabase -AccountName $CosmosAccountName -Name $CosmosDatabaseName
-            New-AzCosmosDBSqlContainer -Name $CosmosContainerName -AccountName $CosmosAccountName -DatabaseName $CosmosDatabaseName -PartitionKeyKind 'Hash' -PartitionKeyPath '/id' # -ResourceGroupName $ResGroupName
+            New-AzCosmosDBSqlContainer -Name $CosmosContainerName -AccountName $CosmosAccountName -DatabaseName $CosmosDatabaseName -PartitionKeyKind 'Hash' -PartitionKeyPath '/id' # -ResourceGroupName $ResourceGroupName
 
             # SQL VM for SSMS and ADF on-prem integration runtime
 
@@ -169,7 +171,7 @@ To do: download and install SQL Database, like AdventureWorks
 
 
 $pw = ConvertTo-SecureString -String 'Pa55w.rd' -AsPlainText -Force
-New-AzDataFactoryDemoEnvironment -Password $pw -Verbose #-CleanUpADFResourceGroup
+New-AzDataFactoryDemoEnvironment -Password $pw -Verbose -ResourceGroupName 'adf2' #-CleanUpADFResourceGroup
 
 $pw = ConvertTo-SecureString -String 'Pa55w.rd1234' -AsPlainText -Force
 #New-AzDataFactoryVM -ResourceGroupName 'ADF-VM4' -Password $pw -Verbose
