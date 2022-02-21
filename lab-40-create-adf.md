@@ -15,7 +15,8 @@ Create your data factory: Use the [Azure Portal](https://portal.azure.com) to cr
     - **Subscription**: Your subscription
     - **Resource group**: ADF
     - **Region**: **West Europe**
-    - **Name**: my-data-factory
+    - **Name**: **adfxxxxx**, where **xxxxx** is a random number. For example: **adf73542**. Please keep in mind this is (part of) a FQDN. So the name needs to be globally unique.
+
     - **Version**: V2
     - Leave other options to their default settings
 

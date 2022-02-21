@@ -1,12 +1,5 @@
 # Lab: Ingest data using the Copy Activity
 
-At the end of this lad, you will have:
-
-1. Ingested data using the Copy Activity
-1. Used the Mapping Data Flow task to perform transformation
-1. Performed transformations using a compute resource
-
-
 ## Task 1: download the CSV file and inspect it's contents.
 
 1. Sign in to the Azure portal.
@@ -70,14 +63,14 @@ At the end of this lad, you will have:
 
 1. Alternatively, for the previous steps, you can open the Azure Data Factory by visiting the link https://adf.azure.com/ and signing in.
 
-3. Click on the **pencil icon** on the left sidebar and select the **+ pipeline button** to open the authoring canvas.
+1. Click on the **pencil icon** on the left sidebar and select the **+** button, select **pipeline**, and select **pipeline** to open the authoring canvas.
 
-4. In the Activities pane, open the **Move and Transform** section and drag the **Copy data** activity onto the pipeline canvas.
+1. In the Activities pane, open the **Move and Transform** section and drag the **Copy data** activity onto the pipeline canvas.
 
     ![Adding the Copy Activity to Azure Data Factory in the Azure Portal](images/M07-E02-T01-img01.png)
 
 
-## Task 2: Create a new HTTP dataset to use as a source
+## Task 3: Create a new HTTP dataset to use as a source
 
 1. In the Source tab of the Copy activity settings, click **+ New**
 
@@ -122,7 +115,7 @@ At the end of this lad, you will have:
 
 6. Click the **Test connection** button in the lower right corner of the screen. If the test is succesfull, click on **Create**.
 
-7. Once you have configured your linked service, you enter the set properties blade. As you are writing to this dataset, you want to point the folder where you want moviesDB.csv copied to. In the example below, I am writing to folder **output** in the file system **data**. While the folder can be dynamically created, the file system must exist prior to writing to it.
+7. Once you have configured your linked service, you enter the set properties blade. As you are writing to this dataset, you want to point the folder where you want moviesDB.csv copied to. In the example below, I am writing to folder **output** in the file system **logs**. While the folder can be dynamically created, the file system must exist prior to writing to it.
 
 8. Set **First row as header** to be true. Select Import Schema: **From sample file**.
 
@@ -138,21 +131,27 @@ At the end of this lad, you will have:
 
 ### Task 4: Test the Copy Activity
 
-At this point, you have fully configured your copy activity. To test it out, click on the **Debug** button at the top of the pipeline canvas. This will start a pipeline debug run.
+At this point, you have fully configured your copy activity. Let's test it out.
+
+1. Click the **Publish all** button in the top section of the data factory to save your changes. Review the summary and click **publish**.
+
+1. Click on the **Debug** button at the top of the pipeline canvas. This will start a pipeline debug run.
 
 1. To monitor the progress of a pipeline debug run, click on the **Output** tab of the pipeline
 
-2. To view a more detailed description of the activity output, click on the eyeglasses icon. This will open up the copy monitoring screen which provides useful metrics such as Data read/written, throughput and in-depth duration statistics.
+1. To view a more detailed description of the activity output, click on the **eyeglasses** icon. This will open up the copy monitoring screen which provides useful metrics such as Data read/written, throughput and in-depth duration statistics.
 
    ![Monitoring a pipeline in Azure Data Factory in the Azure Portal](images/M07-E02-T04-img01.png)
 
-3. Return to the Azure Portal.
+1. Close the Details window by clikcking the cross in the upper right corner.
 
-4. In the left pane, select Resource Groups.
+1. Return to the Azure Portal.
 
-5. Select the ADF resource group.
+1. In the left pane, select **Resource Groups**.
 
-6. In the ADF resource group, select your Azure Storage Account to open it.
+1. Select the **ADF** resource group.
 
-7. Click containers, click the data container and check to see your file was written as expected.
+1. In the ADF resource group, select your **adlsxxxxx** Azure Storage Account to open it.
+
+1. Click containers, click the **logs** container and check to see your file was written as expected.
 
