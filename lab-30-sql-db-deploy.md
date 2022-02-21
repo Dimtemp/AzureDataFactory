@@ -90,9 +90,8 @@ The student will configure basic resources needed to deploy an Azure SQL Databas
 
 4. Click **Save**, and then click **OK** on the Success message pane.
 
-# Exercise 3: Connect to Azure SQL Database
 
-## Task 1: Register Azure SQL Database Instance in Azure Data Studio
+## Task 3: Register Azure SQL Database Instance in Azure Data Studio
 
 1. Launch Azure Data Studio (ADS) from the lab VM
 
@@ -112,9 +111,9 @@ The student will configure basic resources needed to deploy an Azure SQL Databas
 
 	- Authentication Type: **SQL Login**
 
-	- User name: **dp300admin**
+	- User name: **yourfirstname**
 
-	- Password: **dp300P@ssword!**
+	- Password: **Pa55w.rd**
 
 	- Expand the Database drop-down to select **AdventureWorksLT.** 
 	    - **NOTE:** You may be asked to add a firewall rule that allows your client IP access to this server. If you are asked to add a firewall rule, click on **Add account** and login to your Azure account. On Create new firewall screen rule screen, click **OK**.
@@ -135,7 +134,7 @@ The student will configure basic resources needed to deploy an Azure SQL Databas
 
 	![A screenshot of a cell phone Description automatically generated](images/dp-3300-module-22-lab-28.png)
 
-## Task 2: Query Azure SQL Database with a SQL Notebook
+## Task 4: Query Azure SQL Database with a SQL Notebook
 
 1. In Azure Data Studio, connected to this lab’s AdventureWorksLT database, click the **New Notebook** button  
 
