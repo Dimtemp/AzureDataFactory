@@ -177,59 +177,29 @@ or this
 1. Verify that the function runs Succesfully. Inspect the **Input** and **Output** icons in the Debug run output.
 
 
-## Task 6: store sensitive keys in a key vault.
 
-1. Return to the Azure portal and open the **ADF** resource group.
+## Task 6: invoke a pipeline run with PowerShell
 
-1. In the ADF resource group, select your Azure Data Factory to open it.
-
-
-
-
-
-
-## Task: invoke a pipeline run with PowerShell
-
-
-
-# Task 1: Configure the Cloud Shell 
-
-In this task, we will configure Cloud Shell. 
-
-1. Sign in to the [Azure portal](https://portal.azure.com).** You can find your login credentials within the resources tab (directly next to this Instructions tab!)
-**
-2. From the Azure portal, open the **Azure Cloud Shell** by clicking on the icon in the top right of the Azure Portal.
+1. From the Azure portal, open the **Azure Cloud Shell** by clicking on the icon in the top right of the Azure Portal.
 
     ![Screenshot of Azure Portal Azure Cloud Shell icon.](../images/1002.png)
 
-3. When prompted to select either **Bash** or **PowerShell**, select **PowerShell**.
+1. When prompted to select either **Bash** or **PowerShell**, select **PowerShell**.
 
-4. On the **You have no storage mounted** screen select **Show advanced settings** then fill in the information below
+1. On the **You have no storage mounted** screen select **Show advanced settings** then fill in the information below
 
     | Settings | Values |
     |  -- | -- |
-    | Resource Group | **Create new resource group** |
-    | Storage account (Create a new account a use a globally unique name (ex: cloudshellstoragemystorage)) | **cloudshellxxxxxxx** |
-    | File share (create new) | **shellstorage** |
+    | Resource Group | **ADF** |
+    | Storage account (Create a new account) | **cloudshellxxxxxxx** |
+    | File share (create new) | **cloudshare** |
 
-5. Select **Create Storage**
+1. Select **Create Storage**
 
+1. Wait for the Cloud Shell to initialize. 
 
+1. Enter the following commands in the cloud shell, one line at a time, and observe the output.
 
-
-
-1. Return to the Azure Portal tab in the web browser.
-
-1. In the top menu, click the **Cloud Shell** icon.
-
-1. Select the **ADF** resource group.
-
-1. In the ADF resource group, select your **adlsxxxxx** Azure Storage Account to open it.
-
-1. Click containers. Click the **logs** container, click the output folder and check to see your file was written as expected.
-
-
-call from powershell????
 ```powershell
 $ResourceGroupName = 'ADF'
 $PipelineName = 'pipeline2'
@@ -241,4 +211,4 @@ Get-AzDataFactoryV2PipelineRun -PipelineRunId 68fbb5d8-5893-4ab8-9367-827a337cc1
 Get-AzDataFactoryV2ActivityRun -PipelineRunId 68fbb5d8-5893-4ab8-9367-827a337cc115 -ResourceGroupName $ResourceGroupName -DataFactoryName $factory.DataFactoryName -RunStartedAfter '2022-01-01' -RunStartedBefore '2029-01-01'
 ```
 
-
+1. If all has gone well, you have sucessfully invoked a pipeline run from PowerShell, and inspected the results with the final two commands.
