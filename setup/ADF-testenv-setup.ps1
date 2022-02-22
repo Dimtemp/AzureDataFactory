@@ -44,13 +44,13 @@ function New-AzDataFactoryDemoEnvironment {
             }
 
             # Simple resources
-            New-AzResourceGroup -Name $ResourceGroupName -Location $Location
-            New-AzDataFactoryV2 -Name $AdfName -Location $Location
-            New-AzKeyVault -Name $KeyVaultName -Location $Location
+            #New-AzResourceGroup -Name $ResourceGroupName -Location $Location
+            #New-AzDataFactoryV2 -Name $AdfName -Location $Location
+            #New-AzKeyVault -Name $KeyVaultName -Location $Location
             # WARNING: Access policy is not set. No user or application have access permission to use this vault. This can happen if the vault was created by a service principal. Please use Set-AzKeyVaultAccessPolicy to set access policies.
-            
-            $s1 = New-AzStorageAccount -Location $Location -SkuName $StorageSkuName -Name $StorageAccountName #-AsJob
-            $s2 = New-AzStorageAccount -Location $Location -SkuName $StorageSkuName -Name $StorageAccountName2 #-AsJob
+
+            #$s1 = New-AzStorageAccount -Location $Location -SkuName $StorageSkuName -Name $StorageAccountName #-AsJob
+            #$s2 = New-AzStorageAccount -Location $Location -SkuName $StorageSkuName -Name $StorageAccountName2 #-AsJob
 
             # SQL Database
             $SqlServer = Get-AzSqlServer -ResourceGroupName $ResourceGroupName
@@ -59,8 +59,8 @@ function New-AzDataFactoryDemoEnvironment {
             } else {
                 $SqlServerName = $SqlServer.ServerName
             }
-            New-AzSqlDatabase -DatabaseName $SqlDatabaseName -Edition $SqlEdition -ServerName $SqlServerName -SampleName $SqlDatabaseName #-ComputeModel Serverless -ComputeGeneration Gen5 -MinVcore 0.5 -MaxVcore 2 -AutoPauseDelayInMinutes (4*60)
-            New-AzSqlServerFirewallRule -ServerName $SqlServerName -FirewallRuleName 'AllowAllWindowsAzureIps' -StartIpAddress '0.0.0.0' -EndIpAddress '0.0.0.0'
+            #New-AzSqlDatabase -DatabaseName $SqlDatabaseName -Edition $SqlEdition -ServerName $SqlServerName -SampleName $SqlDatabaseName #-ComputeModel Serverless -ComputeGeneration Gen5 -MinVcore 0.5 -MaxVcore 2 -AutoPauseDelayInMinutes (4*60)
+            #New-AzSqlServerFirewallRule -ServerName $SqlServerName -FirewallRuleName 'AllowAllWindowsAzureIps' -StartIpAddress '0.0.0.0' -EndIpAddress '0.0.0.0'
 
             # Cosmos DB
             $cdb = Get-AzCosmosDBAccount
@@ -76,8 +76,8 @@ function New-AzDataFactoryDemoEnvironment {
 
             # finish without specific parameters
             $PSDefaultParameterValues=@{}
-            New-AzStorageContainer -Name $ContainerName1 -Context $s1.context
-            New-AzStorageContainer -Name $ContainerName2 -Context $s2.context
+            #New-AzStorageContainer -Name $ContainerName1 -Context $s1.context
+            #New-AzStorageContainer -Name $ContainerName2 -Context $s2.context
         } else {
             Write-Error "Storage account name not available: $StorageAccountName"
         }
@@ -171,7 +171,7 @@ To do: download and install SQL Database, like AdventureWorks
 
 
 $pw = ConvertTo-SecureString -String 'Pa55w.rd' -AsPlainText -Force
-New-AzDataFactoryDemoEnvironment -Password $pw -Verbose -ResourceGroupName 'adf2' #-CleanUpADFResourceGroup
+New-AzDataFactoryDemoEnvironment -Password $pw -Verbose #-CleanUpADFResourceGroup
 
 $pw = ConvertTo-SecureString -String 'Pa55w.rd1234' -AsPlainText -Force
 #New-AzDataFactoryVM -ResourceGroupName 'ADF-VM4' -Password $pw -Verbose
