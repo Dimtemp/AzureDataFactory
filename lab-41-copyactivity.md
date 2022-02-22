@@ -42,7 +42,7 @@
 
     https://github.com/Dimtemp/AzureDataFactory/tree/main/labfiles
 
-9. Click the moviesDB.csv file and inspect the contents.
+9. Click the **moviesDB.csv** file and inspect the contents.
 
 10. Click the **Raw** button to show the source CSV file.
 
@@ -53,9 +53,9 @@
 
 1. Sign in to the Azure portal.
 
-1. In the left pane, select Resource Groups.
+1. In the left pane, select **Resource Groups**.
 
-1. Select the ADF resource gorup.
+1. Select the **ADF** resource group.
 
 1. In the ADF resource group, select your Azure Data Factory to open it.
 
@@ -64,6 +64,8 @@
 1. Alternatively, for the previous steps, you can open the Azure Data Factory by visiting the link https://adf.azure.com/ and signing in.
 
 1. Click on the **pencil icon** on the left sidebar and select the **+** button, select **pipeline**, and select **pipeline** to open the authoring canvas.
+
+    ![Adding a new pipeline to Azure Data Factory in the Azure Portal](images/M07-E02-T01-img02.png)
 
 1. In the Activities pane, open the **Move and Transform** section and drag the **Copy data** activity onto the pipeline canvas.
 

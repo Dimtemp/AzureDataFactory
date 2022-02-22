@@ -4,7 +4,7 @@
 
 Overview
 
-The Students will alter the configuration of the Azure SQL Database created during the lab for Module 3 to make it highly available.
+The Students will alter the configuration of the Azure SQL Database created in the previous exercise to make it highly available.
 
 Scenario
 
@@ -17,7 +17,7 @@ As a DBA within WideWorldImporters you need to know how to enable geo-replicatio
 
 	![Picture 16](images/dp-3300-module-77-lab-01.png)
 
-3. Click on the Azure SQL Database that was created in Lab 3. An example is shown below.
+3. Click on the Azure SQL Database that was created  in the previous exercise. An example is shown below.
 
 	![Picture 17](images/dp-3300-module-77-lab-02.png)
 

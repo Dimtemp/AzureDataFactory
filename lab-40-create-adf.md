@@ -9,7 +9,7 @@ You are assessing the tooling that can help with the extraction, load and transf
 
 Create your data factory: Use the [Azure Portal](https://portal.azure.com) to create your Data Factory. 
 
-1. In Microsoft Edge, go to the Azure portal tab, click on the **+ Create a resource** icon, type **data factory**, and then click **Data Factory** from the resulting search, and then click **Create**.
+1. In the web browser, go to the Azure portal tab, click on the **+ Create a resource** icon, type **data factory**, and then click **Data Factory** from the resulting search, and then click **Create**.
 
 2. In the New Data Factory screen, create a new Data Factory with the following options:
     - **Subscription**: Your subscription
