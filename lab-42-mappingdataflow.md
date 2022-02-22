@@ -154,7 +154,7 @@ You might have closed the Azure Data Factory studio. If so, please follow this p
 
     5. In the New linked service blade, select your only server from the **Server name** drop down.
 
-    6. In the **Database name** drop down, select **AdvenetureWorksLT**.
+    6. In the **Database name** drop down, select **AdventureWorksLT**.
 
     7. Set the **Authentication type** to **SQL Authentication**. 
 
