@@ -1,6 +1,6 @@
 # Lab: Transforming Data with Mapping Data Flow
 
-You are ready to build a Mapping Data Flow which will transform your data at scale via a spark cluster and then load it into a Data Warehouse. 
+You are ready to build a Mapping Data Flow which will transform your data at scale via a spark cluster and then load it into a SQL database. 
 
 ## Task 1: open the Azure Data Factory
 
@@ -33,7 +33,7 @@ You might have closed the Azure Data Factory studio. If so, please follow this p
 
 1. Turn the **Data Flow Debug** slider located at the top of the authoring module on, and click **OK** in the **Turn on data flow debug** screen that appears.  
 
-    > NOTE: Data Flow clusters might take 5 minutes to warm up.
+    > NOTE: Data Flow clusters might take 5-10 minutes to warm up.
 
 
 1. Select the data flow activity in the pipeline workspace. In the lower pane, select the settings tab, click **+ New** for **Data flow**.
@@ -140,7 +140,7 @@ You might have closed the Azure Data Factory studio. If so, please follow this p
 
 
 
-### Task 4: Writing to a Blob Storage Data Sink
+### Task 4: Writing to a SQL Database Sink
 
 1. **Write to a sink**: Now that you have finished all your transformation logic, you are ready to write to a Sink.
 

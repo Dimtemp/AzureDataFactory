@@ -111,7 +111,9 @@
 
 4. In Set Properties blade, give your dataset this name: **ADLS** and click on the **Linked Service** dropdown. Select **New**.
 
-5. In the New linked service (Azure Data Lake Storage Gen2) blade, select your authentication method as **Account key**, select your **Azure Subscription** and select your Storage account. You will see a screen as follows:
+5. In the New linked service (Azure Data Lake Storage Gen2) blade, select your authentication method as **Account key**
+
+6. Select your **Azure Subscription** and select your Storage account that start with **adlsxxxxx**, where xxxxx is your random number. You will see a screen as follows:
 
    ![Create a Sink in Azure Data Factory in the Azure Portal](images/M07-E02-T03-img01.png)
 
@@ -135,7 +137,7 @@
 
 At this point, you have fully configured your copy activity. Let's test it out.
 
-1. Click the **Publish all** button in the top section of the data factory to save your changes. Review the summary and click **publish**.
+1. Click the **Publish all** button in the top section of the data factory to save your changes. Review the summary and click **Publish**.
 
 1. Click on the **Debug** button at the top of the pipeline canvas. This will start a pipeline debug run.
 
@@ -147,7 +149,7 @@ At this point, you have fully configured your copy activity. Let's test it out.
 
 1. Close the Details window by clikcking the cross in the upper right corner.
 
-1. Return to the Azure Portal.
+1. Return to the Azure Portal tab in the web browser.
 
 1. In the left pane, select **Resource Groups**.
 
@@ -155,5 +157,4 @@ At this point, you have fully configured your copy activity. Let's test it out.
 
 1. In the ADF resource group, select your **adlsxxxxx** Azure Storage Account to open it.
 
-1. Click containers, click the **logs** container and check to see your file was written as expected.
-
+1. Click containers. Click the **logs** container, click the output folder and check to see your file was written as expected.
