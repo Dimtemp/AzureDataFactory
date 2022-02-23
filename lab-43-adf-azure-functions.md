@@ -1,6 +1,7 @@
 # Lab: Use Azure Functions in Azure Data Factory
 
-In this walkthrough, we will create a Function App to display a Hello message when there is an HTTP request. 
+In this lab, we will create a Function App to display a Hello message when there is an HTTP request. We will call this function from the data factory.
+
 
 ## Task 1: Create a Function app 
 
@@ -104,7 +105,7 @@ Congratulations! You have created a Function App to display a Hello message when
 
 1. This opens a new window. Select your Azure Function from the **Azure Function App url** drop down list.
 
-1. Paste the funcion app key, which should still be in your clipboard, into the **Function Key** section.
+1. Paste the function app key, which should still be in your clipboard, into the **Function Key** section.
 
 1. Click **Create**.
 
@@ -118,7 +119,7 @@ Congratulations! You have created a Function App to display a Hello message when
 
 1. To monitor the progress of a pipeline debug run, click on the **Output** tab of the pipeline
 
-1. Verify that the function runs Succesfully. Inspect the **Input** and **Output** icons in the Debug run output.
+1. Verify that the function runs successfully. Inspect the **Input** and **Output** icons in the Debug run output.
 
 
 ## Task 4: implement system parameters in an activity
@@ -133,18 +134,12 @@ Congratulations! You have created a Function App to display a Hello message when
   "name": "@{pipeline().Pipeline}"
 }
 ```
-or this
-```
-{ 
-  "name": "@{toUpper('Dimitri')}"
-}
-```
 
 1. Click on the **Debug** button at the top of the pipeline canvas. This will start a pipeline debug run.
 
 1. To monitor the progress of a pipeline debug run, click on the **Output** tab of the pipeline
 
-1. Verify that the function runs Succesfully. Inspect the **Input** and **Output** icons in the Debug run output.
+1. Verify that the function runs successfully. Inspect the **Input** and **Output** icons in the Debug run output.
 
 
 ## Task 5: implement user defined parameters in an activity
@@ -174,7 +169,7 @@ or this
 
 1. To monitor the progress of a pipeline debug run, click on the **Output** tab of the pipeline
 
-1. Verify that the function runs Succesfully. Inspect the **Input** and **Output** icons in the Debug run output.
+1. Verify that the function runs successfully. Inspect the **Input** and **Output** icons in the Debug run output.
 
 
 
@@ -211,4 +206,4 @@ Get-AzDataFactoryV2PipelineRun -PipelineRunId 68fbb5d8-5893-4ab8-9367-827a337cc1
 Get-AzDataFactoryV2ActivityRun -PipelineRunId 68fbb5d8-5893-4ab8-9367-827a337cc115 -ResourceGroupName $ResourceGroupName -DataFactoryName $factory.DataFactoryName -RunStartedAfter '2022-01-01' -RunStartedBefore '2029-01-01'
 ```
 
-1. If all has gone well, you have sucessfully invoked a pipeline run from PowerShell, and inspected the results with the final two commands.
+1. If all has gone well, you have successfully invoked a pipeline run from PowerShell, and inspected the results with the final two commands.
