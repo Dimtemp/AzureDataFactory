@@ -88,7 +88,7 @@
 
 6. In the **Authentication type** drop down, select **Anonymous**.
 
-7. Click the **Test connection** button in the lower right corner of the screen. If the test is succesfull, click on **Create**.
+7. Click the **Test connection** button in the lower right corner of the screen. If the test is successful, click on **Create**.
 
     -  Once you have created and selected the linked service, specify the rest of your dataset settings. These settings specify how and where in your connection we want to pull the data. As the url is pointed at the file already, no relative endpoint is required. As the data has a header in the first row, set **First row as header** to be true and select Import schema from **connection/store** to pull the schema from the file itself. Select **GET** as the request method. You will see the following screen
 

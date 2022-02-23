@@ -192,6 +192,7 @@ Choose if you want to perform this task from the VM, which takes up some extra t
 1. Run this command to install the required dependencies:
     ```powershell
     Install-Module Az
+    Connect-AzAccount
     ```
 
 1. Skip the next section to continue with the Data Factory invocation.
