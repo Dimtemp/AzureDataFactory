@@ -31,7 +31,7 @@ Students will provision an Azure Databricks instance and will then create a work
 
     - **Pricing Tier**: **Standard** or **Premium (+ Role-based access controls)**.
 
-        ![Creating Azure Databricks in the Azure portal](Linked_Image_Files/M03-E02-T01-img01.png)
+        ![Creating Azure Databricks in the Azure portal](images/M03-E02-T01-img01.png)
 
 6. In the **Azure Databricks Service** blade, click **Review +create**. Then click **Create**
 
@@ -48,7 +48,7 @@ Students will provision an Azure Databricks instance and will then create a work
 
 4. In the **ADF** screen, click **databricks** to open Azure Databricks. This will open your Azure Databricks service.
 
-    ![Azure Databricks Service in the Azure portal](Linked_Image_Files/M03-E02-T02-img01.png)
+    ![Azure Databricks Service in the Azure portal](images/M03-E02-T02-img01.png)
 
 5. In the Azure portal, click on the button **Launch Workspace**.
 
@@ -72,7 +72,7 @@ Students will provision an Azure Databricks instance and will then create a work
 
     - Leave all the remaining options to their current settings, and then click on **Create Cluster**:
 
-        ![Creating an Azure Databricks Cluster in the Azure portal](Linked_Image_Files/M03-E02-T03-img01.png)
+        ![Creating an Azure Databricks Cluster in the Azure portal](images/M03-E02-T03-img01.png)
 
 8. In the **Create Cluster** screen, click on **Create Cluster** and leave the Microsoft Edge screen open.
 
