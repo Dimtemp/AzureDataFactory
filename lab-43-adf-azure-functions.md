@@ -26,7 +26,7 @@ In this task, we will create a Function app.
 
     **Note** - Remember to change the **xxxxx** so that it makes a unique **Function App name**
 
-1. Inspect the contents of the **Hosting** tab. Notice the **Plan type** is set to **Comsumption**.
+1. Inspect the contents of the **Hosting** tab. Notice the **Plan type** is set to **Consumption**.
 
 4. Click **Review + Create** and, after successful validation, click **Create** to begin provisioning and deploying your new Azure Function App.
 
