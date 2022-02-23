@@ -175,6 +175,30 @@ Congratulations! You have created a Function App to display a Hello message when
 
 ## Task 6: invoke a pipeline run with PowerShell
 
+Choose if you want to perform this task from the VM, which takes up some extra time to install the required dependencies, or to perform this task from the Cloud Shell.
+
+### Skip this section if you want to perform this task from the cloud shell.
+
+1. From the Azure portal, open the **Virtual Machines** section.
+
+1. Make sure your SQL VM is started.
+
+1. On the **Overview** page for the virtual machine, select the **Connect** button and choose **RDP**. 
+
+1. Log on to your VM with your specified credentials. 
+
+1. Start **Windows PowerShell** from the Start Menu.
+
+1. Run this command to install the required dependencies:
+    ```powershell
+    Install-Module Az
+    ```
+
+1. Skip the next section to continue with the Data Factory invocation.
+
+
+### Skip this section if you performed the previous section.
+
 1. From the Azure portal, open the **Azure Cloud Shell** by clicking on the icon in the top right of the Azure Portal.
 
     ![Screenshot of Azure Portal Azure Cloud Shell icon.](../images/1002.png)
@@ -193,14 +217,19 @@ Congratulations! You have created a Function App to display a Hello message when
 
 1. Wait for the Cloud Shell to initialize. 
 
-1. Enter the following commands in the cloud shell, one line at a time, and observe the output.
+
+### Continue with this section in all cases
+
+1. Enter the following commands in the shell, one line at a time, and observe the output.
 
 ```powershell
 $ResourceGroupName = 'ADF'
 $PipelineName = 'pipeline2'
 $factory = Get-AzDataFactoryV2 -ResourceGroupName $ResourceGroupName
+
 $id = Invoke-AzDataFactoryV2Pipeline -ResourceGroupName $ResourceGroupName -DataFactoryName $factory.DataFactoryName -PipelineName $PipelineName
--parameter hashtable
+-parameter @{name='Dimitri'}
+
 Get-AzDataFactoryV2PipelineRun -PipelineRunId 68fbb5d8-5893-4ab8-9367-827a337cc115 -ResourceGroupName $ResourceGroupName -DataFactoryName $factory.DataFactoryName
 
 Get-AzDataFactoryV2ActivityRun -PipelineRunId 68fbb5d8-5893-4ab8-9367-827a337cc115 -ResourceGroupName $ResourceGroupName -DataFactoryName $factory.DataFactoryName -RunStartedAfter '2022-01-01' -RunStartedBefore '2029-01-01'
