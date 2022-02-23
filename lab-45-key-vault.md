@@ -28,26 +28,26 @@
 
     **Note**: Your Azure account is the only one authorized to perform operations on this new vault. You can modify this if you wish in the **Settings** and then the **Access policies** section.
 
-1. Return to the Azure Portal, open the ADF resource group, and select your Azure Data Factory to open it.
+1. Return to the Azure Portal, open the **ADF** resource group, and select your Azure Data Factory to open it.
 
-1. Note: you're not required to open the ADF Studio. Stay in the Azure portal for this.
+1. Note: you're not required to open the ADF Studio. Stay in the **Azure portal** for this.
 
-1. Open the properties of your data factory and copy the Managed Identity Application ID value.
+1. Open the **properties** of your data factory and copy the **Managed Identity Application ID** value.
 
-1. Return to the key vault. Open the key vault access policies and add the managed identity permissions to Get and List secrets.
+1. Return to the key vault. Open the key vault **access policies** and add the managed identity permissions to **Get** and **List secrets**.
 
-1. Click Add, then click Save.
+1. Click **Add**, then click **Save**.
 
 
 # Task 2: Add a secret to the Key Vault
         
 In this task, we will add a secret to the key vault. 
 
-1. In the Azure portal, open your ADF resource group, and open your Azure function.
+1. In the Azure portal, open your **ADF** resource group, and open your **Azure function**.
 
-1. Under Functions, select your only Function to open it.
+1. Under **Functions**, select your only Function to open it.
 
-1. In the Developer section, click Function Keys. Click **Show values** and click **Copy to clipboard**.
+1. In the Developer section, click **Function Keys**. Click **Show values** and click **Copy to clipboard**.
 
 1. Return to your Key Vault. 
 
@@ -59,7 +59,7 @@ In this task, we will add a secret to the key vault.
     | --- | --- |
     | Upload options | **Manual** |
     | Name | **AzureFunctionsSecret** |
-    | Value | **the password to your SQL DB PaaS Server form previous exercises** |
+    | Value | **paste your clipboard contents** |
 
 3. Click **Create**.
 
@@ -75,7 +75,7 @@ In this task, we will add a secret to the key vault.
 
 1. At the **Settings** tab, click the **Edit** button to edit the Azure Function linked service.
 
-1. In the flyout window that appears, click Azure Key Vault.
+1. In the flyout window that appears, click **Azure Key Vault**.
 
 1. From **AKV linked service**, click **+ New**.
 
