@@ -201,7 +201,7 @@ Choose if you want to perform this task from the VM, which takes up some extra t
 
 1. From the Azure portal, open the **Azure Cloud Shell** by clicking on the icon in the top right of the Azure Portal.
 
-    ![Screenshot of Azure Portal Azure Cloud Shell icon.](../images/1002.png)
+    ![Screenshot of Azure Portal Azure Cloud Shell icon.](images/1002.png)
 
 1. When prompted to select either **Bash** or **PowerShell**, select **PowerShell**.
 
