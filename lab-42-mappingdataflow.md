@@ -164,7 +164,9 @@ You might have closed the Azure Data Factory studio. If so, please follow this p
 
     10. Once you have configured your linked service, you enter the set properties blade. Select **Create new table**.
 
-    11. Click **OK** once completed.
+    11. Specify **dbo** as the schema, and **movies** as the table name.
+
+    12. Click **OK** once completed.
 
 At this point, You have finished building your 8 transformation Mapping Data Flow. It's time to run the pipeline and see the results!
 
