@@ -227,12 +227,11 @@ $ResourceGroupName = 'ADF'
 $PipelineName = 'pipeline2'
 $factory = Get-AzDataFactoryV2 -ResourceGroupName $ResourceGroupName
 
-$id = Invoke-AzDataFactoryV2Pipeline -ResourceGroupName $ResourceGroupName -DataFactoryName $factory.DataFactoryName -PipelineName $PipelineName
--parameter @{name='Dimitri'}
+$id = Invoke-AzDataFactoryV2Pipeline -ResourceGroupName $ResourceGroupName -DataFactoryName $factory.DataFactoryName -PipelineName $PipelineName -parameter @{name='Dimitri'}
 
-Get-AzDataFactoryV2PipelineRun -PipelineRunId 68fbb5d8-5893-4ab8-9367-827a337cc115 -ResourceGroupName $ResourceGroupName -DataFactoryName $factory.DataFactoryName
+Get-AzDataFactoryV2PipelineRun -PipelineRunId $id -ResourceGroupName $ResourceGroupName -DataFactoryName $factory.DataFactoryName
 
-Get-AzDataFactoryV2ActivityRun -PipelineRunId 68fbb5d8-5893-4ab8-9367-827a337cc115 -ResourceGroupName $ResourceGroupName -DataFactoryName $factory.DataFactoryName -RunStartedAfter '2022-01-01' -RunStartedBefore '2029-01-01'
+Get-AzDataFactoryV2ActivityRun -PipelineRunId $id -ResourceGroupName $ResourceGroupName -DataFactoryName $factory.DataFactoryName -RunStartedAfter '2022-01-01' -RunStartedBefore '2030-01-01'
 ```
 
 1. If all has gone well, you have successfully invoked a pipeline run from PowerShell, and inspected the results with the final two commands.
